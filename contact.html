@@ -9,11 +9,11 @@
 <body>
 <header class="site-header">
   <div class="header-inner">
-    <div class="brand">
+    <div style="display:flex;align-items:center;">
       <div class="logo-circle">ZB</div>
       <div>
         <div class="brand-text-main">北京祝邦新技术研究所</div>
-        <div class="brand-text-sub">CONTACT &amp; FEEDBACK</div>
+        <div class="brand-text-sub">CONTACT & FEEDBACK</div>
       </div>
     </div>
     <nav class="main-nav">
@@ -27,46 +27,37 @@
 </header>
 
 <main class="page-shell">
-  <section class="hero">
-    <div>
-      <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
-        电话 · 邮箱 · 在线留言
-      </div>
-      <h1 class="hero-title">欢迎工程单位、经销商与技术人员联系祝邦</h1>
-      <p class="hero-subtitle">
+  <section style="margin-bottom:50px;display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;">
+    <div style="flex:1 1 320px;min-width:280px;">
+      <h1 class="page-title">欢迎工程单位、经销商与技术人员联系祝邦</h1>
+      <p class="page-subtitle">
         无论是大型公共建筑、精装修项目，还是材料选型、施工疑难，
-        您都可以通过以下方式与我们沟通，我们将尽快回复。
+        您都可以通过电话、电子邮件或在线留言与我们沟通。
+        如能提供项目名称、所在城市、使用部位及预计面积，我们将更高效地为您匹配产品与技术方案。
       </p>
-    </div>
-    <aside class="hero-card">
-      <div class="hero-card-tag">COMPANY INFO</div>
-      <h2 class="hero-card-title">公司信息</h2>
-      <p class="hero-card-text">
-        北京祝邦新技术研究所<br>
-        地址：北京市西城区府右街太仆寺街23号<br>
-        电话：13801024443<br>
-        官网：<a href="http://www.bjzhubang.com.cn" target="_blank" style="color:#fee2e2;">www.bjzhubang.com.cn</a>
-      </p>
-      <div class="hero-pill">
-        <span>✔ 建议附上工程名称、位置、预计使用部位与面积</span>
+      <div class="card" style="margin-top:20px;">
+        <div class="card-title">公司信息</div>
+        <p class="card-text" style="line-height:1.9;">
+          北京祝邦新技术研究所<br/>
+          地址：北京市西城区府右街太仆寺街23号<br/>
+          电话：13801024443<br/>
+          官网：<a href="http://www.bjzhubang.com.cn" target="_blank">www.bjzhubang.com.cn</a><br/>
+        </p>
+        <p class="card-text" style="font-size:13px;color:#4b5563;">
+          建议在联系时简要说明工程类型（幕墙、地面、泳池、防水等）、
+          基材情况（混凝土、石材、GRC 板等）以及工期要求，
+          以便我们一次性给出更完整的建议。
+        </p>
       </div>
-    </aside>
-  </section>
-
-  <section class="section-block">
-    <div class="section-headline">
-      <h2 class="section-title">在线留言（示意表单）</h2>
-      <span class="section-kicker">CUSTOMER MESSAGE</span>
     </div>
 
-    <div class="form-card">
-      <p style="font-size:12px;color:var(--text-muted);margin:0 0 10px;">
-        GitHub Pages 无法直接处理表单提交，下面为静态展示结构。实际使用可接入第三方表单服务或由贵公司自行开发后台。
-      </p>
-
-      <form>
-        <div class="form-row">
+    <div style="flex:1 1 320px;min-width:280px;">
+      <div class="form-card">
+        <p style="font-size:13px;color:#6b7280;margin-top:0;margin-bottom:10px;">
+          说明：GitHub Pages 为静态托管，以下表单仅为展示结构示意，
+          实际使用可接入第三方表单服务或由贵公司自行开发后台系统。
+        </p>
+        <form>
           <div class="form-field">
             <label class="form-label">姓名 / 单位联系人</label>
             <input class="form-input" type="text" placeholder="例如：张工 / 李经理" />
@@ -75,32 +66,29 @@
             <label class="form-label">联系方式（电话 / 邮箱）</label>
             <input class="form-input" type="text" placeholder="便于我们与您取得联系" />
           </div>
-        </div>
-
-        <div class="form-field">
-          <label class="form-label">项目名称 / 所在城市</label>
-          <input class="form-input" type="text" placeholder="例如：北京XX广场幕墙工程" />
-        </div>
-
-        <div class="form-field">
-          <label class="form-label">需求与问题说明</label>
-          <textarea class="form-textarea" placeholder="请简要说明拟使用部位（外墙干挂、泳池防水、内墙粘贴等）、预计面积以及目前遇到的技术或选型问题。"></textarea>
-        </div>
-
-        <button type="button" class="btn-primary">提交留言（示意）</button>
-      </form>
+          <div class="form-field">
+            <label class="form-label">项目名称 / 所在城市</label>
+            <input class="form-input" type="text" placeholder="例如：北京XX广场幕墙工程" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">拟使用部位及面积</label>
+            <input class="form-input" type="text" placeholder="例如：外墙干挂石材 3000 m²，泳池防水 800 m²" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">需求与问题说明</label>
+            <textarea class="form-textarea" placeholder="请简要说明目前所处阶段（方案 / 施工 / 维修）、拟选择的材料类型，以及希望解决的技术或质量问题。"></textarea>
+          </div>
+          <button type="button" class="btn-primary">提交留言（示意）</button>
+        </form>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-row">
-      <span class="footer-strong">京ICP备09075916号-2</span>
-      <span>地址：北京市西城区府右街太仆寺街23号</span>
-      <span>电话：13801024443</span>
-      <span>网址：<a href="http://www.bjzhubang.com.cn" target="_blank" style="color:#e5e7eb;text-decoration:none;">www.bjzhubang.com.cn</a></span>
-    </div>
+    <div>京ICP备09075916号-2</div>
+    <div>地址：北京市西城区府右街太仆寺街23号　电话：13801024443　网址：<a href="http://www.bjzhubang.com.cn" target="_blank">www.bjzhubang.com.cn</a></div>
     <div>© 北京祝邦新技术研究所</div>
   </div>
 </footer>
