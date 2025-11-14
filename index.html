@@ -1,877 +1,977 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <title>企业简介 · 北京筑邦</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      *, *::before, *::after {
-        box-sizing: border-box;
-      }
-      :root {
-        --bg: #f7f7fb;
-        --bg-alt: #ffffff;
-        --primary: #1a4c8f;
-        --primary-soft: #8ab5ff;
-        --accent: #c89a4b;
-        --text: #222222;
-        --muted: #6c7380;
-        --border: #e1e4ee;
-        --radius-lg: 18px;
-        --radius-md: 12px;
-        --shadow-soft: 0 22px 45px rgba(15, 23, 42, 0.14);
-      }
-      html, body {
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, -system-ui,
-          'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-        background: radial-gradient(circle at top left, #fdfdff 0, #f2f4fb 45%, #e5e7f3 100%);
-        color: var(--text);
-        -webkit-font-smoothing: antialiased;
-      }
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-      img {
-        max-width: 100%;
-        display: block;
-      }
-      .page {
-        min-height: 100vh;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>北京筑邦 · 官方网站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --bg: #f5f7fb;
+      --bg-alt: #ffffff;
+      --primary: #1a4c8f;
+      --primary-soft: #8ab5ff;
+      --accent: #f59e0b;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.14);
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui,
+        "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: radial-gradient(circle at top left, #fdfdff 0, #f2f4fb 45%, #e5e7f3 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+    a { color: inherit; text-decoration: none; }
 
-      /* Top bar */
-      .topbar {
-        font-size: 12px;
-        color: var(--muted);
-        padding: 6px 16px;
-        border-bottom: 1px solid rgba(225, 228, 238, 0.7);
-        background: rgba(248, 249, 252, 0.9);
-      }
-      .topbar-inner {
-        max-width: 1120px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 8px;
-      }
+    /* Top bar */
+    .topbar {
+      font-size: 12px;
+      color: var(--muted);
+      padding: 6px 16px;
+      border-bottom: 1px solid rgba(229, 231, 235, 0.7);
+      background: rgba(248, 250, 252, 0.9);
+    }
+    .topbar-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
 
-      /* Nav */
-      .nav {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        backdrop-filter: blur(18px);
-        background: linear-gradient(to bottom, rgba(248, 250, 252, 0.98), rgba(248, 250, 252, 0.8));
-        border-bottom: 1px solid rgba(225, 228, 238, 0.85);
-      }
-      .nav-inner {
-        max-width: 1120px;
-        margin: 0 auto;
-        padding: 10px 16px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-      }
-      .nav-brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-size: 16px;
-      }
-      .nav-logo {
-        width: 36px;
-        height: 36px;
-        border-radius: 12px;
-        background: radial-gradient(circle at 20% 20%, #ffffff, #1a4c8f);
-        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.25);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #ffffff;
-        font-weight: 600;
-        font-size: 18px;
-      }
-      .nav-text-cn {
-        font-weight: 600;
-        letter-spacing: 0.18em;
-        text-indent: 0.18em;
-      }
-      .nav-text-en {
-        font-size: 11px;
-        color: var(--muted);
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-      .nav-menu {
-        display: flex;
-        gap: 20px;
-        font-size: 14px;
-        color: #3a4150;
-      }
-      .nav-link {
-        position: relative;
-        padding-bottom: 2px;
-      }
-      .nav-link::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(90deg, var(--primary), var(--accent));
-        border-radius: 999px;
-        transition: width 0.25s ease;
-      }
-      .nav-link:hover::after {
-        width: 100%;
-      }
-      .nav-cta {
-        padding: 6px 14px;
-        border-radius: 999px;
-        border: 1px solid rgba(26, 76, 143, 0.18);
-        background: radial-gradient(circle at top left, rgba(26, 76, 143, 0.10), #ffffff);
-        font-size: 12px;
-        color: var(--primary);
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        cursor: pointer;
-      }
-      .nav-cta-dot {
-        width: 7px;
-        height: 7px;
-        border-radius: 999px;
-        background: #16a34a;
-      }
+    /* Nav */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(248, 250, 252, 0.98),
+        rgba(248, 250, 252, 0.85));
+      border-bottom: 1px solid rgba(229, 231, 235, 0.85);
+    }
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 20% 20%, #ffffff, #1a4c8f);
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .nav-text-cn {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-indent: 0.18em;
+    }
+    .nav-text-en {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      color: #374151;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      position: relative;
+      padding-bottom: 2px;
+      cursor: pointer;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 999px;
+      transition: width 0.2s ease;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+    .nav-cta {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(26, 76, 143, 0.18);
+      background: radial-gradient(circle at top left,
+        rgba(26, 76, 143, 0.12), #ffffff);
+      font-size: 12px;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+    .nav-cta-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
 
-      /* Layout */
-      .section {
-        max-width: 1120px;
-        margin: 0 auto;
-        padding: 48px 16px;
-      }
+    /* Layout */
+    .section {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 52px 16px;
+    }
 
-      /* Hero */
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.3fr);
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(26, 76, 143, 0.2);
+      background: rgba(248, 250, 252, 0.95);
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .hero-pill-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+    .hero-title-cn {
+      font-size: 30px;
+      letter-spacing: 0.16em;
+      text-indent: 0.16em;
+      margin-bottom: 10px;
+    }
+    .hero-title-en {
+      font-size: 14px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .hero-text {
+      font-size: 14px;
+      line-height: 1.9;
+      color: #374151;
+      margin-bottom: 22px;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+    .hero-tag {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(255, 255, 255, 0.95);
+      color: #4b5563;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .btn-primary {
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--primary), #2563eb);
+      color: #ffffff;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 16px 32px rgba(37, 99, 235, 0.4);
+    }
+    .btn-ghost {
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(248, 250, 252, 0.96);
+      font-size: 13px;
+      cursor: pointer;
+      color: #111827;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top, #fefefe 0, #edf1fb 42%, #dde4f5 100%);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 18px 18px 14px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .hero-card-main {
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(135deg, #1a4c8f, #020617);
+      position: relative;
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 18% 12% 10% 12%;
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: radial-gradient(circle at bottom, rgba(15, 23, 42, 0.9),
+        rgba(148, 163, 184, 0.3));
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      padding: 14px 18px;
+      gap: 10px;
+      color: #e5e7eb;
+      font-size: 12px;
+    }
+    .hero-grid-title {
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .hero-card-footer {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--muted);
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    /* Section headings */
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+    .section-title-cn {
+      font-size: 20px;
+      letter-spacing: 0.16em;
+      text-indent: 0.16em;
+    }
+    .section-title-en {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+    .section-desc {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 380px;
+    }
+
+    /* Products section */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.98);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 16px 16px 18px;
+      font-size: 13px;
+      color: #374151;
+      transition: transform 0.18s ease, box-shadow 0.18s ease,
+        border-color 0.18s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
+      border-color: rgba(26, 76, 143, 0.35);
+    }
+    .card-tag {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    /* Two-column sections */
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 24px;
+      align-items: flex-start;
+    }
+    .text-body {
+      font-size: 14px;
+      line-height: 1.9;
+      color: #374151;
+    }
+    .bullet-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      font-size: 13px;
+      color: #4b5563;
+    }
+    .bullet-list li {
+      margin-bottom: 6px;
+    }
+    .bullet-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--primary);
+      margin-right: 8px;
+    }
+    .panel {
+      background: rgba(248, 250, 252, 0.98);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 16px 18px;
+      font-size: 13px;
+    }
+    .panel-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    /* Contact & message */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      gap: 24px;
+    }
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13px;
+    }
+    .contact-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .contact-label {
+      width: 70px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .contact-value {
+      color: #111827;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 16px;
+      margin-bottom: 10px;
+    }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 12px;
+    }
+    .form-field label {
+      color: var(--muted);
+    }
+    .form-field input,
+    .form-field textarea {
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      padding: 8px 10px;
+      font-size: 13px;
+      font-family: inherit;
+      background: #f9fafb;
+      outline: none;
+    }
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35);
+      background: #ffffff;
+    }
+    .form-field textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    /* Bottom email + back home */
+    .footer-cta {
+      background: radial-gradient(circle at top, #eef2ff 0, #e0f2fe 40%, #f9fafb 100%);
+      border-top: 1px solid rgba(209, 213, 219, 0.9);
+      padding: 26px 16px 24px;
+      margin-top: 34px;
+    }
+    .footer-cta-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+      gap: 18px;
+      align-items: center;
+    }
+    .footer-cta-title {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    .footer-cta-text {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .email-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .email-input {
+      min-width: 220px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      padding: 8px 12px;
+      font-size: 13px;
+      background: #ffffff;
+      outline: none;
+    }
+    .email-input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35);
+    }
+    .btn-outline {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(37, 99, 235, 0.7);
+      background: transparent;
+      font-size: 12px;
+      color: #1d4ed8;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 16px 16px 22px;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: #f9fafb;
+    }
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
       .hero {
-        display: grid;
-        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.3fr);
-        gap: 42px;
-        align-items: center;
+        grid-template-columns: minmax(0, 1fr);
       }
-      .hero-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 4px 12px;
-        border-radius: 999px;
-        border: 1px solid rgba(26, 76, 143, 0.2);
-        background: rgba(248, 250, 252, 0.9);
-        font-size: 11px;
-        color: var(--muted);
-        margin-bottom: 18px;
-      }
-      .hero-pill-dot {
-        width: 9px;
-        height: 9px;
-        border-radius: 999px;
-        background: var(--accent);
-      }
-      .hero-title-cn {
-        font-size: 28px;
-        letter-spacing: 0.18em;
-        text-indent: 0.18em;
-        margin-bottom: 8px;
-      }
-      .hero-title-en {
-        font-size: 14px;
-        letter-spacing: 0.25em;
-        text-transform: uppercase;
-        color: var(--muted);
-        margin-bottom: 24px;
-      }
-      .hero-text {
-        font-size: 14px;
-        line-height: 1.9;
-        color: #3f4654;
-        margin-bottom: 24px;
-      }
-      .hero-meta {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
-        font-size: 12px;
-        margin-bottom: 24px;
-      }
-      .meta-label {
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        font-size: 11px;
-        color: var(--muted);
-        margin-bottom: 4px;
-      }
-      .meta-value {
-        color: #111827;
-      }
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        align-items: center;
-      }
-      .btn-primary {
-        padding: 10px 20px;
-        border-radius: 999px;
-        border: none;
-        background: linear-gradient(135deg, var(--primary), #2563eb);
-        color: #ffffff;
-        font-size: 13px;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        box-shadow: 0 16px 30px rgba(37, 99, 235, 0.35);
-      }
-      .btn-ghost {
-        padding: 9px 16px;
-        border-radius: 999px;
-        border: 1px solid rgba(148, 163, 184, 0.5);
-        background: rgba(248, 250, 252, 0.96);
-        font-size: 13px;
-        cursor: pointer;
-        color: #111827;
-      }
-
-      .hero-card {
-        background: radial-gradient(circle at top, #fefefe 0, #edf1fb 40%, #dde3f5 100%);
-        border-radius: var(--radius-lg);
-        box-shadow: var(--shadow-soft);
-        padding: 16px 18px 14px;
-        position: relative;
-        overflow: hidden;
-      }
-      .hero-card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 12px;
-        color: var(--muted);
-        margin-bottom: 10px;
-      }
-      .hero-card-main {
-        position: relative;
-        border-radius: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.85);
-        overflow: hidden;
-        aspect-ratio: 4 / 3;
-        background: linear-gradient(135deg, #1a4c8f, #0f172a);
-      }
-      .hero-building {
-        position: absolute;
-        inset: 18% 14% 6%;
-        border-radius: 12px;
-        border: 1px solid rgba(148, 163, 184, 0.5);
-        background: linear-gradient(to top, rgba(15, 23, 42, 0.9), rgba(148, 163, 184, 0.4));
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        color: rgba(226, 232, 240, 0.96);
-        font-size: 13px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-      .hero-card-overlay {
-        position: absolute;
-        inset: 12% 8%;
-        border-radius: inherit;
-        border: 1px solid rgba(255, 255, 255, 0.24);
-        mix-blend-mode: soft-light;
-      }
-      .hero-card-footer {
-        margin-top: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 11px;
-        color: var(--muted);
-      }
-
-      /* Section titles */
-      .section-heading {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: 16px;
-        margin-bottom: 28px;
-      }
-      .section-title-cn {
-        font-size: 20px;
-        letter-spacing: 0.16em;
-        text-indent: 0.16em;
-      }
-      .section-title-en {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.16em;
-        color: var(--muted);
-      }
-      .section-desc {
-        font-size: 13px;
-        color: var(--muted);
-        max-width: 360px;
-      }
-
-      /* Company intro */
-      .intro-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
-        gap: 28px;
-        align-items: flex-start;
-      }
-      .intro-text {
-        font-size: 14px;
-        line-height: 1.9;
-        color: #374151;
-      }
-      .intro-panel {
-        background: rgba(248, 250, 252, 0.96);
-        border-radius: var(--radius-md);
-        border: 1px solid var(--border);
-        padding: 18px 18px 16px;
-      }
-      .intro-panel-title {
-        font-size: 13px;
-        color: #111827;
-        margin-bottom: 12px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .intro-panel-grid {
-        display: grid;
+      .hero-card { order: -1; }
+      .cards-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px 16px;
-        font-size: 12px;
       }
-      .intro-label {
-        font-size: 11px;
-        color: var(--muted);
-        margin-bottom: 2px;
+      .two-col,
+      .contact-grid,
+      .footer-cta-inner {
+        grid-template-columns: minmax(0, 1fr);
       }
+    }
+    @media (max-width: 640px) {
+      .nav-inner { flex-wrap: wrap; }
+      .nav-menu {
+        display: none; /* 简化：手机直接上下滑动浏览 */
+      }
+      .hero-title-cn { font-size: 24px; }
+      .cards-grid { grid-template-columns: minmax(0, 1fr); }
+      .section { padding-inline: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 顶部提示条 -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div>欢迎访问北京筑邦官方网站，专注建筑装饰与工程应用整体解决方案。</div>
+      <div>工程合作热线：010-XXXX XXXX</div>
+    </div>
+  </div>
 
-      /* Values */
-      .values-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
-      }
-      .value-card {
-        background: rgba(255, 255, 255, 0.98);
-        border-radius: var(--radius-md);
-        border: 1px solid var(--border);
-        padding: 16px 16px 18px;
-        font-size: 13px;
-        color: #374151;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-      }
-      .value-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
-        border-color: rgba(26, 76, 143, 0.28);
-      }
-      .value-tag {
-        font-size: 11px;
-        color: var(--muted);
-        margin-bottom: 6px;
-      }
-      .value-title {
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 6px;
-        color: #111827;
-      }
+  <!-- 导航 -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="nav-logo">筑</div>
+        <div>
+          <div class="nav-text-cn">北京筑邦</div>
+          <div class="nav-text-en">ZHUBANG ARCHITECTURAL SYSTEM</div>
+        </div>
+      </div>
+      <nav class="nav-menu">
+        <span class="nav-link" data-target="products">企业产品</span>
+        <span class="nav-link" data-target="intro">产品简介</span>
+        <span class="nav-link" data-target="applications">工程应用</span>
+        <span class="nav-link" data-target="tech">技术资料</span>
+        <span class="nav-link" data-target="contact">联系方式</span>
+        <span class="nav-link" data-target="message">客户留言</span>
+      </nav>
+      <button class="nav-cta" onclick="scrollToSection('contact')">
+        <span class="nav-cta-dot"></span>
+        立即联系工程顾问
+      </button>
+    </div>
+  </header>
 
-      /* Timeline */
-      .timeline-wrap {
-        background: rgba(255, 255, 255, 0.98);
-        border-radius: var(--radius-lg);
-        border: 1px solid var(--border);
-        padding: 18px 20px 6px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      .timeline-row {
-        display: grid;
-        grid-template-columns: 80px minmax(0, 1fr);
-        gap: 16px;
-        align-items: flex-start;
-        padding: 6px 0;
-      }
-      .timeline-year {
-        font-size: 12px;
-        color: var(--muted);
-      }
-      .timeline-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 999px;
-        background: linear-gradient(135deg, var(--primary), var(--accent));
-        margin-right: 6px;
-        display: inline-block;
-      }
-      .timeline-text {
-        font-size: 13px;
-        color: #374151;
-      }
-
-      /* Contact */
-      .contact-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
-        gap: 24px;
-      }
-      .contact-panel {
-        background: rgba(255, 255, 255, 0.98);
-        border-radius: var(--radius-md);
-        border: 1px solid var(--border);
-        padding: 16px 18px 18px;
-        font-size: 13px;
-      }
-      .contact-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      .contact-item {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 8px;
-      }
-      .contact-label {
-        width: 56px;
-        color: var(--muted);
-        font-size: 12px;
-      }
-      .contact-value {
-        color: #111827;
-      }
-      .contact-form-row {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px 16px;
-        margin-bottom: 10px;
-      }
-      .form-field {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        font-size: 12px;
-      }
-      .form-field label {
-        color: var(--muted);
-      }
-      .form-field input,
-      .form-field textarea {
-        border-radius: 10px;
-        border: 1px solid #d1d5db;
-        padding: 8px 10px;
-        font-size: 13px;
-        font-family: inherit;
-        outline: none;
-        background: #f9fafb;
-      }
-      .form-field input:focus,
-      .form-field textarea:focus {
-        border-color: #2563eb;
-        box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35);
-        background: #ffffff;
-      }
-      .form-field textarea {
-        resize: vertical;
-        min-height: 90px;
-      }
-
-      /* Footer */
-      .footer {
-        padding: 18px 16px 26px;
-        font-size: 12px;
-        color: var(--muted);
-        border-top: 1px solid var(--border);
-        margin-top: 32px;
-      }
-      .footer-inner {
-        max-width: 1120px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-
-      /* Responsive */
-      @media (max-width: 920px) {
-        .hero {
-          grid-template-columns: minmax(0, 1fr);
-        }
-        .hero-card {
-          order: -1;
-        }
-        .intro-grid {
-          grid-template-columns: minmax(0, 1fr);
-        }
-        .values-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-        .contact-grid {
-          grid-template-columns: minmax(0, 1fr);
-        }
-      }
-      @media (max-width: 640px) {
-        .nav-inner {
-          flex-wrap: wrap;
-        }
-        .nav-menu {
-          display: none;
-        }
-        .hero-title-cn {
-          font-size: 22px;
-        }
-        .hero-meta {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-        .values-grid {
-          grid-template-columns: minmax(0, 1fr);
-        }
-        .section {
-          padding-inline: 14px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="page">
-      <!-- top bar -->
-      <div class="topbar">
-        <div class="topbar-inner">
-          <div>欢迎访问本公司官方网站，如需工程合作与咨询，欢迎致电或在线留言。</div>
-          <div>工作时间：周一至周五 09:00–18:00</div>
+  <!-- HERO -->
+  <section class="section" id="top">
+    <div class="hero">
+      <div>
+        <div class="hero-pill">
+          <span class="hero-pill-dot"></span>
+          幕墙系统 · 金属板材 · 工程应用一体化服务
+        </div>
+        <h1 class="hero-title-cn">让每一座建筑，都有属于它的表情</h1>
+        <div class="hero-title-en">
+          FACADE SYSTEM · METAL PANEL · ENGINEERING APPLICATION
+        </div>
+        <p class="hero-text">
+          北京筑邦专注建筑外立面与室内装饰系统，多年来服务于公共建筑、商业综合体、
+          办公园区与高端住宅项目。我们从材料选型、系统设计、加工制造到现场安装，提供
+          一站式解决方案，让建筑在满足功能的同时更具识别度和持久价值。
+        </p>
+        <div class="hero-tags">
+          <span class="hero-tag">铝单板系统</span>
+          <span class="hero-tag">蜂窝板 / 复合板</span>
+          <span class="hero-tag">造型吊顶与墙面</span>
+          <span class="hero-tag">工程配套与深化设计</span>
+        </div>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="scrollToSection('products')">
+            浏览企业产品
+            <span>↓</span>
+          </button>
+          <button class="btn-ghost" onclick="scrollToSection('applications')">
+            查看工程应用案例
+          </button>
         </div>
       </div>
 
-      <!-- nav -->
-      <header class="nav">
-        <div class="nav-inner">
-          <div class="nav-brand">
-            <div class="nav-logo">筑</div>
+      <aside class="hero-card" aria-hidden="true">
+        <div class="hero-card-header">
+          <span>系统化解决方案 · INTEGRATED SOLUTION</span>
+          <span>品质 · 安全 · 交付</span>
+        </div>
+        <div class="hero-card-main">
+          <div class="hero-grid">
             <div>
-              <div class="nav-text-cn">北京筑邦</div>
-              <div class="nav-text-en">BEIJING ZHUBANG</div>
+              <div class="hero-grid-title">FACADE / CEILING</div>
+              <p>从建筑外立面到室内公共空间，提供全系列金属板材系统，
+                兼顾结构安全、耐候性能与视觉表达。</p>
+            </div>
+            <div>
+              <div class="hero-grid-title">PROJECT FLOW</div>
+              <p>方案配合 → 图纸深化 → 工厂生产 → 现场安装 →
+                交付维护，全流程专业团队跟进。</p>
             </div>
           </div>
-          <nav class="nav-menu">
-            <a href="#about" class="nav-link">企业简介</a>
-            <a href="#strength" class="nav-link">核心优势</a>
-            <a href="#history" class="nav-link">发展历程</a>
-            <a href="#contact" class="nav-link">联系我们</a>
-          </nav>
-          <button class="nav-cta" onclick="scrollToId('contact')">
-            <span class="nav-cta-dot"></span>
-            获取工程咨询
-          </button>
         </div>
-      </header>
+        <div class="hero-card-footer">
+          <span>适用于：机场、地铁站、写字楼、购物中心、学校医院等多类型项目</span>
+          <span>支持定制颜色、尺寸及造型</span>
+        </div>
+      </aside>
+    </div>
+  </section>
 
-      <!-- hero -->
-      <section class="section" id="top">
-        <div class="hero">
-          <div>
-            <div class="hero-pill">
-              <span class="hero-pill-dot"></span>
-              城市更新 · 建筑装饰 · 专业工程服务
-            </div>
-            <h1 class="hero-title-cn">以专业筑就空间价值</h1>
-            <div class="hero-title-en">INTEGRATED ARCHITECTURAL & INTERIOR SOLUTIONS</div>
-            <p class="hero-text">
-              北京筑邦专注于建筑装饰与工程施工服务，业务涵盖公共建筑、办公空间、商业综合体、酒店及高端住宅等领域。
-              我们以严谨的工程管理、成熟的技术团队与完善的质量体系，为客户提供从方案深化、施工管理到后期维护的一体化解决方案。
-            </p>
-            <div class="hero-meta">
-              <div>
-                <div class="meta-label">成立时间</div>
-                <div class="meta-value">多年行业经验 · 资质健全</div>
-              </div>
-              <div>
-                <div class="meta-label">服务领域</div>
-                <div class="meta-value">公共建筑 · 商业空间 · 办公与住宅</div>
-              </div>
-              <div>
-                <div class="meta-label">合作客户</div>
-                <div class="meta-value">政企机构 · 品牌企业 · 发展商</div>
-              </div>
-            </div>
-            <div class="hero-actions">
-              <button class="btn-primary" onclick="scrollToId('about')">
-                查看企业简介
-                <span>→</span>
-              </button>
-              <button class="btn-ghost" onclick="scrollToId('contact')">
-                预约工程顾问
-              </button>
-            </div>
-          </div>
-
-          <aside class="hero-card" aria-hidden="true">
-            <div class="hero-card-header">
-              <span>重点项目剪影 · PROJECT SNAPSHOT</span>
-              <span>品质 · 交付 · 口碑</span>
-            </div>
-            <div class="hero-card-main">
-              <div class="hero-card-overlay"></div>
-              <div class="hero-building">URBAN ARCHITECTURE · BEIJING</div>
-            </div>
-            <div class="hero-card-footer">
-              <span>累计服务项目：若干重点公共与商业空间</span>
-              <span>以稳定团队与精细化管理为保障</span>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <!-- about -->
-      <section class="section" id="about">
-        <div class="section-heading">
-          <div>
-            <div class="section-title-cn">企业简介</div>
-            <div class="section-title-en">COMPANY PROFILE</div>
-          </div>
-          <p class="section-desc">
-            以下内容可根据原网页“企业简介”实际文字进行替换，这里为结构化示例，使信息更清晰、易阅读，也便于后续扩展更多模块。
-          </p>
-        </div>
-        <div class="intro-grid">
-          <div class="intro-text">
-            <p>
-              北京筑邦是一家立足北京、面向全国提供建筑装饰及工程施工服务的专业公司。公司自成立以来，始终坚持“规范管理、品质为先、诚信合作”的经营理念，逐步形成集设计深化、工程施工、项目管理和售后服务于一体的综合服务体系。
-            </p>
-            <p>
-              公司团队由多学科背景的建筑师、结构工程师、机电工程师、项目管理人员及专业施工队伍组成，在公共建筑、政企办公、教育医疗、酒店公寓、商业综合体等领域积累了丰富实践经验。通过对材料工艺、施工细节和安全标准的严格把控，我们致力于为客户呈现兼具功能性、美观度与使用体验的高品质空间。
-            </p>
-            <p>
-              未来，北京筑邦将持续提升工程管理数字化水平，强化安全文明施工与绿色环保理念，以更开放的姿态与合作伙伴携手，参与城市更新和空间价值重塑，为城市与用户创造更具长期价值的工程作品。
-            </p>
-          </div>
-          <aside class="intro-panel">
-            <div class="intro-panel-title">
-              <span>关键信息一览 · KEY FACTS</span>
-              <span style="font-size:11px; color:var(--muted);">可根据实际情况修改</span>
-            </div>
-            <div class="intro-panel-grid">
-              <div>
-                <div class="intro-label">公司性质</div>
-                <div>建筑装饰工程服务企业</div>
-              </div>
-              <div>
-                <div class="intro-label">总部地点</div>
-                <div>北京市（以实际地址为准）</div>
-              </div>
-              <div>
-                <div class="intro-label">业务范围</div>
-                <div>装饰装修工程 · 机电安装 · 相关配套服务</div>
-              </div>
-              <div>
-                <div class="intro-label">服务对象</div>
-                <div>政府单位 · 企业客户 · 机构与个人</div>
-              </div>
-              <div>
-                <div class="intro-label">管理理念</div>
-                <div>过程可控 · 节点透明 · 结果可追溯</div>
-              </div>
-              <div>
-                <div class="intro-label">质量目标</div>
-                <div>一次合格率高 · 客户满意度持续提升</div>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <!-- strength / values -->
-      <section class="section" id="strength">
-        <div class="section-heading">
-          <div>
-            <div class="section-title-cn">核心优势</div>
-            <div class="section-title-en">CORE STRENGTHS</div>
-          </div>
-          <p class="section-desc">
-            将原网页中分散的优势、资质及服务特点，提炼为清晰的三大板块，方便客户在短时间内理解公司的专业能力。
-          </p>
-        </div>
-        <div class="values-grid">
-          <article class="value-card">
-            <div class="value-tag">01 · 专业团队</div>
-            <h3 class="value-title">多学科协同 · 精细化管理</h3>
-            <p>
-              项目团队由项目经理、专业工程师及经验丰富的现场负责人组成，实行全过程责任制管理。从前期方案配合、图纸深化，到施工进场、过程控制与竣工验收，均有专人跟进，确保沟通顺畅、执行高效。
-            </p>
-          </article>
-          <article class="value-card">
-            <div class="value-tag">02 · 质量与安全</div>
-            <h3 class="value-title">严控标准 · 安全文明施工</h3>
-            <p>
-              通过完善的现场管理制度和质量验收流程，对施工工序、材料进场、隐蔽工程等关键环节进行严格把控。秉持“安全第一”的原则，规范施工现场布置，减少对周边环境和既有使用功能的影响。
-            </p>
-          </article>
-          <article class="value-card">
-            <div class="value-tag">03 · 服务与口碑</div>
-            <h3 class="value-title">及时响应 · 持续服务</h3>
-            <p>
-              在项目交付后，提供必要的技术支持与维护咨询服务，建立项目回访机制，及时响应客户需求。我们重视每一次合作的长期关系，以稳定的工程质量和可靠的服务积累口碑。
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- history / timeline -->
-      <section class="section" id="history">
-        <div class="section-heading">
-          <div>
-            <div class="section-title-cn">发展历程</div>
-            <div class="section-title-en">MILESTONES</div>
-          </div>
-          <p class="section-desc">
-            可在此根据原网站时间轴进行补充，例如公司成立年份、重要资质获得时间、代表性项目节点等。
-          </p>
-        </div>
-        <div class="timeline-wrap">
-          <div class="timeline-row">
-            <div class="timeline-year">20XX 年</div>
-            <div class="timeline-text">
-              <span class="timeline-dot"></span>
-              公司正式成立，确立“专注建筑装饰工程”的发展方向，逐步完善组织架构与管理制度。
-            </div>
-          </div>
-          <div class="timeline-row">
-            <div class="timeline-year">20XX 年</div>
-            <div class="timeline-text">
-              <span class="timeline-dot"></span>
-              承接若干公共建筑与办公空间装饰工程项目，在项目管理和施工质量方面形成稳定优势。
-            </div>
-          </div>
-          <div class="timeline-row">
-            <div class="timeline-year">20XX 年</div>
-            <div class="timeline-text">
-              <span class="timeline-dot"></span>
-              持续拓展业务类型，引入数字化管理工具，提升工程进度与成本控制的精细化水平。
-            </div>
-          </div>
-          <div class="timeline-row">
-            <div class="timeline-year">20XX 年至今</div>
-            <div class="timeline-text">
-              <span class="timeline-dot"></span>
-              在城市更新、存量改造等领域不断积累经验，形成更具综合性的工程服务能力，与多类型客户保持长期合作关系。
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- contact -->
-      <section class="section" id="contact">
-        <div class="section-heading">
-          <div>
-            <div class="section-title-cn">联系我们</div>
-            <div class="section-title-en">CONTACT US</div>
-          </div>
-          <p class="section-desc">
-            此处可根据原网站“联系方式”或页脚信息补充公司地址、电话、邮箱等实际信息，并对接在线留言或第三方表单系统。
-          </p>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-panel">
-            <h3 style="margin:0 0 10px; font-size:14px; color:#111827;">公司联系方式</h3>
-            <ul class="contact-list">
-              <li class="contact-item">
-                <div class="contact-label">地址</div>
-                <div class="contact-value">北京市 ×× 区 ×× 路 ×× 号（示意，可替换为实际地址）</div>
-              </li>
-              <li class="contact-item">
-                <div class="contact-label">电话</div>
-                <div class="contact-value">010-XXXX XXXX</div>
-              </li>
-              <li class="contact-item">
-                <div class="contact-label">邮箱</div>
-                <div class="contact-value">info@bjzhubang.com.cn</div>
-              </li>
-              <li class="contact-item">
-                <div class="contact-label">网址</div>
-                <div class="contact-value">www.bjzhubang.com.cn</div>
-              </li>
-            </ul>
-            <p style="margin-top:12px; font-size:12px; color:var(--muted);">
-              如需获取项目案例、资质文件或投标相关资料，欢迎通过电话或邮件与我们联系，我们将安排专人对接。
-            </p>
-          </div>
-          <div class="contact-panel">
-            <h3 style="margin:0 0 10px; font-size:14px; color:#111827;">在线留言</h3>
-            <p style="margin:0 0 12px; font-size:12px; color:var(--muted);">
-              以下为示例表单样式，可接入实际后端或第三方表单服务（如公司 CRM、邮件系统等）。
-            </p>
-            <form onsubmit="event.preventDefault(); alert('这里可以对接真实提交逻辑。');">
-              <div class="contact-form-row">
-                <div class="form-field">
-                  <label for="name">您的姓名</label>
-                  <input id="name" type="text" placeholder="请输入姓名" />
-                </div>
-                <div class="form-field">
-                  <label for="phone">联系电话</label>
-                  <input id="phone" type="text" placeholder="手机号或座机" />
-                </div>
-              </div>
-              <div class="contact-form-row">
-                <div class="form-field">
-                  <label for="company">单位 / 公司</label>
-                  <input id="company" type="text" placeholder="选填" />
-                </div>
-                <div class="form-field">
-                  <label for="email">电子邮箱</label>
-                  <input id="email" type="email" placeholder="选填，便于发送资料" />
-                </div>
-              </div>
-              <div class="form-field" style="margin-bottom:10px;">
-                <label for="message">项目需求或留言</label>
-                <textarea id="message" placeholder="请简要说明项目类型、面积、地点及期望工期等信息"></textarea>
-              </div>
-              <button class="btn-primary" type="submit" style="font-size:12px; padding-inline:18px;">
-                提交信息
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      <!-- footer -->
-      <footer class="footer">
-        <div class="footer-inner">
-          <div>© 北京筑邦（示例名称） 保留所有权利</div>
-          <div>ICP备案号 / 备案信息可根据实际情况补充</div>
-        </div>
-      </footer>
+  <!-- 企业产品 -->
+  <section class="section" id="products">
+    <div class="section-heading">
+      <div>
+        <div class="section-title-cn">企业产品</div>
+        <div class="section-title-en">PRODUCT PORTFOLIO</div>
+      </div>
+      <p class="section-desc">
+        以下为示例分类，你可以根据原有“产品简介”等页面，把真实产品型号、
+        规格、适用场景填入对应卡片或增减卡片数量。
+      </p>
     </div>
 
-    <script>
-      function scrollToId(id) {
+    <div class="cards-grid">
+      <article class="card">
+        <div class="card-tag">外墙系统 · FACADE</div>
+        <h3 class="card-title">金属幕墙铝单板系统</h3>
+        <p>
+          适用于大面积外立面与门头造型，可实现平面、折线、弧形等多种形式。
+          表面可根据需求选择氟碳喷涂、粉末喷涂或木纹转印等工艺，兼顾耐候性与美观度。
+        </p>
+      </article>
+      <article class="card">
+        <div class="card-tag">吊顶系统 · CEILING</div>
+        <h3 class="card-title">格栅吊顶 / 条形板吊顶</h3>
+        <p>
+          多种模数与开孔形式，适用于大型中庭、交通枢纽、走道空间，便于检修与灯光布置，
+          营造轻盈通透的视觉效果。
+        </p>
+      </article>
+      <article class="card">
+        <div class="card-tag">室内墙面 · WALL PANEL</div>
+        <h3 class="card-title">吸音墙板与装饰墙板</h3>
+        <p>
+          结合穿孔、吸音材料与背衬结构，提升空间声学表现；多种表面纹理与颜色选择，
+          适用于报告厅、会议室、教育及医疗空间。
+        </p>
+      </article>
+      <article class="card">
+        <div class="card-tag">特殊定制 · CUSTOM</div>
+        <h3 class="card-title">异形造型 / 艺术装置</h3>
+        <p>
+          配合建筑与室内设计需求，提供三维异形铝板、雕花板及艺术装置加工服务，
+          支持小批量定制与样板打样。
+        </p>
+      </article>
+      <article class="card">
+        <div class="card-tag">系统配套 · ACCESSORIES</div>
+        <h3 class="card-title">龙骨系统与连接件</h3>
+        <p>
+          为不同板型匹配对应龙骨、挂件与连接系统，确保结构稳定性与安装效率，
+          便于后期维护与局部更换。
+        </p>
+      </article>
+      <article class="card">
+        <div class="card-tag">方案服务 · SERVICE</div>
+        <h3 class="card-title">深化设计与技术支持</h3>
+        <p>
+          提供节点深化、算量配套、安装指导等技术服务，帮助设计与施工单位在
+          早期阶段就规避潜在风险，提升整体实施效率。
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 产品简介 -->
+  <section class="section" id="intro">
+    <div class="section-heading">
+      <div>
+        <div class="section-title-cn">产品简介</div>
+        <div class="section-title-en">PRODUCT OVERVIEW</div>
+      </div>
+      <p class="section-desc">
+        可以参考原“产品简介”页面的文字，将产品优势、性能指标等内容放入这里，
+        方便客户快速理解整体产品线特点。
+      </p>
+    </div>
+
+    <div class="two-col">
+      <div class="text-body">
+        <p>
+          北京筑邦金属板材系统以安全、耐久与美学为核心设计原则，在板材厚度、
+          表面处理、结构连接及防腐蚀等方面严格把控。产品通过多项性能测试，
+          在抗风压、耐候性、防火等级等方面均能满足建筑规范要求。
+        </p>
+        <p>
+          在外观呈现上，我们提供多种标准色系与特制定制色，可实现金属质感、
+          石纹、木纹等不同效果，匹配不同类型建筑的定位。通过模块化设计，
+          系统可灵活适配不同龙骨结构与安装条件，兼顾新建项目与改造项目的需求。
+        </p>
+      </div>
+      <aside class="panel">
+        <div class="panel-title">核心优势一览 · KEY FEATURES</div>
+        <ul class="bullet-list">
+          <li><span class="bullet-dot"></span>多种板型与模数组合，适配外墙、吊顶与室内墙面</li>
+          <li><span class="bullet-dot"></span>成熟的龙骨与连接系统设计，缩短安装周期</li>
+          <li><span class="bullet-dot"></span>多工艺表面处理，满足耐候性和视觉效果双重要求</li>
+          <li><span class="bullet-dot"></span>支持BIM / CAD 图纸配合与节点深化</li>
+          <li><span class="bullet-dot"></span>厂家直供模式，有利于控制成本与交期</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 工程应用 -->
+  <section class="section" id="applications">
+    <div class="section-heading">
+      <div>
+        <div class="section-title-cn">工程应用</div>
+        <div class="section-title-en">ENGINEERING APPLICATIONS</div>
+      </div>
+      <p class="section-desc">
+        该板块可替代原“工程应用”页面，将代表性项目按类型分组展示，
+        也可以后续链接到更多案例详情页。
+      </p>
+    </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <div class="panel-title">典型应用场景 · APPLICATION SCENES</div>
+        <ul class="bullet-list">
+          <li><span class="bullet-dot"></span>城市综合体外立面与商业街区立面改造</li>
+          <li><span class="bullet-dot"></span>机场、高铁站、地铁站等交通枢纽公共空间吊顶</li>
+          <li><span class="bullet-dot"></span>政企办公楼、园区大堂及走廊墙面装饰</li>
+          <li><span class="bullet-dot"></span>学校、医院等公共建筑内外墙金属装饰系统</li>
+          <li><span class="bullet-dot"></span>旧楼改造与城市更新项目的外立面重塑</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <div class="panel-title">项目实施流程 · PROJECT FLOW</div>
+        <ul class="bullet-list">
+          <li><span class="bullet-dot"></span>前期沟通：了解项目需求、预算及进度计划</li>
+          <li><span class="bullet-dot"></span>方案阶段：配合建筑与室内设计方案，提供节点建议</li>
+          <li><span class="bullet-dot"></span>深化设计：完成施工图深化、材料清单及系统设计</li>
+          <li><span class="bullet-dot"></span>生产与供货：按计划安排工厂生产与现场排产</li>
+          <li><span class="bullet-dot"></span>安装与验收：配合施工单位安装指导，完成联合验收</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技术资料 -->
+  <section class="section" id="tech">
+    <div class="section-heading">
+      <div>
+        <div class="section-title-cn">技术资料</div>
+        <div class="section-title-en">TECHNICAL DOCUMENTS</div>
+      </div>
+      <p class="section-desc">
+        可在此放置产品样本下载链接、性能检测报告、安装说明书等，
+        方便设计师和工程单位获取技术数据。
+      </p>
+    </div>
+
+    <div class="cards-grid">
+      <article class="card">
+        <div class="card-tag">CATALOG</div>
+        <h3 class="card-title">产品彩页 / 样本册</h3>
+        <p>包含常规板型、颜色、表面处理示意图等内容，可用于项目方案阶段沟通。</p>
+        <p style="font-size:12px;color:var(--muted);margin-top:6px;">（可链接到 PDF 下载：例如 /download/catalog.pdf）</p>
+      </article>
+      <article class="card">
+        <div class="card-tag">SPECIFICATION</div>
+        <h3 class="card-title">技术参数与选型手册</h3>
+        <p>详细列出板材厚度、允许跨度、安装节点示意等，为结构与施工设计提供依据。</p>
+      </article>
+      <article class="card">
+        <div class="card-tag">INSTALLATION</div>
+        <h3 class="card-title">安装与维护说明</h3>
+        <p>针对现场施工步骤、注意事项及后期清洁维护建议进行说明，确保系统长期稳定使用。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 联系方式 + 客户留言 -->
+  <section class="section" id="contact">
+    <div class="section-heading">
+      <div>
+        <div class="section-title-cn">联系方式</div>
+        <div class="section-title-en">CONTACT</div>
+      </div>
+      <p class="section-desc">
+        以下为示例信息，你可以替换为 http://www.bjzhubang.com.cn 上实际的地址、电话、邮箱等。
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="panel">
+        <h3 class="panel-title">公司联系信息 · COMPANY INFO</h3>
+        <ul class="contact-list">
+          <li class="contact-item">
+            <div class="contact-label">公司名称</div>
+            <div class="contact-value">北京筑邦建筑装饰工程有限公司（示例）</div>
+          </li>
+          <li class="contact-item">
+            <div class="contact-label">地址</div>
+            <div class="contact-value">北京市 ×× 区 ×× 路 ×× 号（请替换为实际地址）</div>
+          </li>
+          <li class="contact-item">
+            <div class="contact-label">电话</div>
+            <div class="contact-value">010-XXXX XXXX</div>
+          </li>
+          <li class="contact-item">
+            <div class="contact-label">传真</div>
+            <div class="contact-value">010-XXXX XXXX</div>
+          </li>
+          <li class="contact-item">
+            <div class="contact-label">邮箱</div>
+            <div class="contact-value">info@bjzhubang.com.cn</div>
+          </li>
+          <li class="contact-item">
+            <div class="contact-label">网址</div>
+            <div class="contact-value">www.bjzhubang.com.cn</div>
+          </li>
+        </ul>
+        <p style="font-size:12px;color:var(--muted);margin-top:10px;">
+          如需项目投标文件、资质证书或工程案例 PPT，请通过电话或邮件与我们联系，我们将安排专人提供资料。
+        </p>
+      </div>
+
+      <div class="panel" id="message">
+        <h3 class="panel-title">客户留言 · ONLINE MESSAGE</h3>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:10px;">
+          以下为示例表单样式，可接入公司邮箱或 CRM 系统。当前点击“提交留言”仅作演示提示。
+        </p>
+        <form onsubmit="event.preventDefault(); alert('感谢您的留言！在正式网站中，这里可以对接后台或发送到指定邮箱。');">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">您的姓名</label>
+              <input id="name" type="text" placeholder="请输入姓名" />
+            </div>
+            <div class="form-field">
+              <label for="phone">联系电话</label>
+              <input id="phone" type="text" placeholder="手机号或座机" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="company">单位 / 公司</label>
+              <input id="company" type="text" placeholder="选填" />
+            </div>
+            <div class="form-field">
+              <label for="email">电子邮箱</label>
+              <input id="email" type="email" placeholder="选填，便于发送资料" />
+            </div>
+          </div>
+          <div class="form-field" style="margin-bottom:10px;">
+            <label for="msg">项目需求或留言</label>
+            <textarea id="msg" placeholder="请简要说明项目类型、面积、地点及期望工期等信息"></textarea>
+          </div>
+          <button class="btn-primary" type="submit" style="font-size:12px;padding-inline:18px;">
+            提交留言
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部：邮箱 + 返回首页 -->
+  <div class="footer-cta">
+    <div class="footer-cta-inner">
+      <div>
+        <div class="footer-cta-title">订阅最新产品与工程资讯</div>
+        <div class="footer-cta-text">
+          留下您的邮箱，我们会不定期发送产品更新、工程案例与技术资料。
+          您也可以随时点击邮件中的退订链接。
+        </div>
+      </div>
+      <div class="email-row">
+        <input class="email-input" type="email" placeholder="请输入您的邮箱地址" />
+        <button class="btn-outline" onclick="alert('示例：这里可以提交到订阅系统。');">
+          订阅邮件
+        </button>
+        <button class="btn-outline" onclick="scrollToSection('top')">
+          返回首页
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>© 北京筑邦建筑装饰工程有限公司（示例） 保留所有权利</div>
+      <div>ICP备案号 / 备案信息可根据实际情况补充</div>
+    </div>
+  </footer>
+
+  <script>
+    // 点击导航平滑跳转
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const top = el.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+
+    // 导航高亮当前模块（简单版）
+    const navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        const target = link.getAttribute("data-target");
+        if (target) scrollToSection(target);
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      const sections = ["products", "intro", "applications", "tech", "contact", "message"];
+      let current = null;
+      const offset = 120;
+      sections.forEach(id => {
         const el = document.getElementById(id);
         if (!el) return;
         const rect = el.getBoundingClientRect();
-        const offset = window.pageYOffset + rect.top - 80;
-        window.scrollTo({ top: offset, behavior: 'smooth' });
-      }
-    </script>
-  </body>
+        if (rect.top <= offset && rect.bottom > offset) {
+          current = id;
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.toggle("active", link.getAttribute("data-target") === current);
+      });
+    });
+  </script>
+</body>
 </html>
