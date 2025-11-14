@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>北京筑邦 · 官方网站</title>
+  <title>北京祝邦新技术研究所 · 官方网站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     *, *::before, *::after { box-sizing: border-box; }
@@ -10,7 +10,6 @@
       --bg: #f5f7fb;
       --bg-alt: #ffffff;
       --primary: #1a4c8f;
-      --primary-soft: #8ab5ff;
       --accent: #f59e0b;
       --text: #111827;
       --muted: #6b7280;
@@ -22,22 +21,21 @@
     html, body {
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui,
-        "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-      background: radial-gradient(circle at top left, #fdfdff 0, #f2f4fb 45%, #e5e7f3 100%);
+      font-family: -apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,
+        "Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+      background: radial-gradient(circle at top left,#fdfdff 0,#f2f4fb 45%,#e5e7f3 100%);
       color: var(--text);
       -webkit-font-smoothing: antialiased;
       scroll-behavior: smooth;
     }
     a { color: inherit; text-decoration: none; }
 
-    /* Top bar */
     .topbar {
       font-size: 12px;
       color: var(--muted);
       padding: 6px 16px;
-      border-bottom: 1px solid rgba(229, 231, 235, 0.7);
-      background: rgba(248, 250, 252, 0.9);
+      border-bottom: 1px solid rgba(229,231,235,0.7);
+      background: rgba(248,250,252,0.9);
     }
     .topbar-inner {
       max-width: 1160px;
@@ -48,15 +46,13 @@
       gap: 8px;
     }
 
-    /* Nav */
     .nav {
       position: sticky;
       top: 0;
       z-index: 40;
       backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(248, 250, 252, 0.98),
-        rgba(248, 250, 252, 0.85));
-      border-bottom: 1px solid rgba(229, 231, 235, 0.85);
+      background: linear-gradient(to bottom,rgba(248,250,252,0.98),rgba(248,250,252,0.85));
+      border-bottom: 1px solid rgba(229,231,235,0.85);
     }
     .nav-inner {
       max-width: 1160px;
@@ -76,8 +72,8 @@
       width: 34px;
       height: 34px;
       border-radius: 12px;
-      background: radial-gradient(circle at 20% 20%, #ffffff, #1a4c8f);
-      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.3);
+      background: radial-gradient(circle at 20% 20%,#ffffff,#1a4c8f);
+      box-shadow: 0 12px 26px rgba(15,23,42,0.3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -116,9 +112,9 @@
       bottom: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
+      background: linear-gradient(90deg,var(--primary),var(--accent));
       border-radius: 999px;
-      transition: width 0.2s ease;
+      transition: width .2s ease;
     }
     .nav-link:hover::after,
     .nav-link.active::after {
@@ -127,9 +123,8 @@
     .nav-cta {
       padding: 6px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(26, 76, 143, 0.18);
-      background: radial-gradient(circle at top left,
-        rgba(26, 76, 143, 0.12), #ffffff);
+      border: 1px solid rgba(26,76,143,0.18);
+      background: radial-gradient(circle at top left,rgba(26,76,143,0.12),#ffffff);
       font-size: 12px;
       color: var(--primary);
       display: inline-flex;
@@ -144,17 +139,15 @@
       background: #22c55e;
     }
 
-    /* Layout */
     .section {
       max-width: 1160px;
       margin: 0 auto;
       padding: 52px 16px;
     }
 
-    /* Hero */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.3fr);
+      grid-template-columns: minmax(0,1.4fr) minmax(0,1.3fr);
       gap: 40px;
       align-items: center;
     }
@@ -164,8 +157,8 @@
       gap: 8px;
       padding: 4px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(26, 76, 143, 0.2);
-      background: rgba(248, 250, 252, 0.95);
+      border: 1px solid rgba(26,76,143,0.2);
+      background: rgba(248,250,252,0.95);
       font-size: 11px;
       color: var(--muted);
       margin-bottom: 18px;
@@ -205,8 +198,8 @@
       font-size: 11px;
       padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(255,255,255,0.95);
       color: #4b5563;
     }
     .hero-actions {
@@ -219,27 +212,27 @@
       padding: 10px 22px;
       border-radius: 999px;
       border: none;
-      background: linear-gradient(135deg, var(--primary), #2563eb);
+      background: linear-gradient(135deg,var(--primary),#2563eb);
       color: #ffffff;
       font-size: 13px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      box-shadow: 0 16px 32px rgba(37, 99, 235, 0.4);
+      box-shadow: 0 16px 32px rgba(37,99,235,0.4);
     }
     .btn-ghost {
       padding: 9px 18px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: rgba(248, 250, 252, 0.96);
+      border: 1px solid rgba(148,163,184,0.6);
+      background: rgba(248,250,252,0.96);
       font-size: 13px;
       cursor: pointer;
       color: #111827;
     }
 
     .hero-card {
-      background: radial-gradient(circle at top, #fefefe 0, #edf1fb 42%, #dde4f5 100%);
+      background: radial-gradient(circle at top,#fefefe 0,#edf1fb 42%,#dde4f5 100%);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-soft);
       padding: 18px 18px 14px;
@@ -256,19 +249,18 @@
     }
     .hero-card-main {
       border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255,255,255,0.9);
       overflow: hidden;
-      aspect-ratio: 4 / 3;
-      background: linear-gradient(135deg, #1a4c8f, #020617);
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg,#1a4c8f,#020617);
       position: relative;
     }
     .hero-grid {
       position: absolute;
       inset: 18% 12% 10% 12%;
       border-radius: 14px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: radial-gradient(circle at bottom, rgba(15, 23, 42, 0.9),
-        rgba(148, 163, 184, 0.3));
+      border: 1px solid rgba(148,163,184,0.7);
+      background: radial-gradient(circle at bottom,rgba(15,23,42,0.9),rgba(148,163,184,0.3));
       display: grid;
       grid-template-columns: 1.2fr 1fr;
       padding: 14px 18px;
@@ -293,7 +285,6 @@
       gap: 6px;
     }
 
-    /* Section headings */
     .section-heading {
       display: flex;
       align-items: baseline;
@@ -318,26 +309,24 @@
       max-width: 380px;
     }
 
-    /* Products section */
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3,minmax(0,1fr));
       gap: 18px;
     }
     .card {
-      background: rgba(255, 255, 255, 0.98);
+      background: rgba(255,255,255,0.98);
       border-radius: var(--radius-md);
       border: 1px solid var(--border);
       padding: 16px 16px 18px;
       font-size: 13px;
       color: #374151;
-      transition: transform 0.18s ease, box-shadow 0.18s ease,
-        border-color 0.18s ease;
+      transition: transform .18s ease,box-shadow .18s ease,border-color .18s ease;
     }
     .card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
-      border-color: rgba(26, 76, 143, 0.35);
+      box-shadow: 0 16px 30px rgba(15,23,42,0.12);
+      border-color: rgba(26,76,143,0.35);
     }
     .card-tag {
       font-size: 11px;
@@ -353,10 +342,9 @@
       color: #111827;
     }
 
-    /* Two-column sections */
     .two-col {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      grid-template-columns: minmax(0,1.4fr) minmax(0,1.2fr);
       gap: 24px;
       align-items: flex-start;
     }
@@ -365,26 +353,8 @@
       line-height: 1.9;
       color: #374151;
     }
-    .bullet-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-      font-size: 13px;
-      color: #4b5563;
-    }
-    .bullet-list li {
-      margin-bottom: 6px;
-    }
-    .bullet-dot {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--primary);
-      margin-right: 8px;
-    }
     .panel {
-      background: rgba(248, 250, 252, 0.98);
+      background: rgba(248,250,252,0.98);
       border-radius: var(--radius-md);
       border: 1px solid var(--border);
       padding: 16px 18px;
@@ -396,11 +366,26 @@
       margin-bottom: 10px;
       color: #111827;
     }
+    .bullet-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      font-size: 13px;
+      color: #4b5563;
+    }
+    .bullet-list li { margin-bottom: 6px; }
+    .bullet-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--primary);
+      margin-right: 8px;
+    }
 
-    /* Contact & message */
     .contact-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      grid-template-columns: minmax(0,1.1fr) minmax(0,1.2fr);
       gap: 24px;
     }
     .contact-list {
@@ -419,12 +404,11 @@
       color: var(--muted);
       font-size: 12px;
     }
-    .contact-value {
-      color: #111827;
-    }
+    .contact-value { color: #111827; }
+
     .form-row {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2,minmax(0,1fr));
       gap: 10px 16px;
       margin-bottom: 10px;
     }
@@ -434,9 +418,7 @@
       gap: 4px;
       font-size: 12px;
     }
-    .form-field label {
-      color: var(--muted);
-    }
+    .form-field label { color: var(--muted); }
     .form-field input,
     .form-field textarea {
       border-radius: 10px;
@@ -450,7 +432,7 @@
     .form-field input:focus,
     .form-field textarea:focus {
       border-color: #2563eb;
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35);
+      box-shadow: 0 0 0 1px rgba(37,99,235,0.35);
       background: #ffffff;
     }
     .form-field textarea {
@@ -458,10 +440,9 @@
       min-height: 100px;
     }
 
-    /* Bottom email + back home */
     .footer-cta {
-      background: radial-gradient(circle at top, #eef2ff 0, #e0f2fe 40%, #f9fafb 100%);
-      border-top: 1px solid rgba(209, 213, 219, 0.9);
+      background: radial-gradient(circle at top,#eef2ff 0,#e0f2fe 40%,#f9fafb 100%);
+      border-top: 1px solid rgba(209,213,219,0.9);
       padding: 26px 16px 24px;
       margin-top: 34px;
     }
@@ -469,7 +450,7 @@
       max-width: 1160px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+      grid-template-columns: minmax(0,1.5fr) minmax(0,1.1fr);
       gap: 18px;
       align-items: center;
     }
@@ -499,19 +480,18 @@
     }
     .email-input:focus {
       border-color: #2563eb;
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35);
+      box-shadow: 0 0 0 1px rgba(37,99,235,0.35);
     }
     .btn-outline {
       padding: 8px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(37, 99, 235, 0.7);
+      border: 1px solid rgba(37,99,235,0.7);
       background: transparent;
       font-size: 12px;
       color: #1d4ed8;
       cursor: pointer;
     }
 
-    /* Footer */
     .footer {
       padding: 16px 16px 22px;
       font-size: 12px;
@@ -529,28 +509,21 @@
       flex-wrap: wrap;
     }
 
-    /* Responsive */
     @media (max-width: 960px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
+      .hero { grid-template-columns: minmax(0,1fr); }
       .hero-card { order: -1; }
-      .cards-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .cards-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
       .two-col,
       .contact-grid,
       .footer-cta-inner {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: minmax(0,1fr);
       }
     }
     @media (max-width: 640px) {
       .nav-inner { flex-wrap: wrap; }
-      .nav-menu {
-        display: none; /* 简化：手机直接上下滑动浏览 */
-      }
+      .nav-menu { display: none; }
       .hero-title-cn { font-size: 24px; }
-      .cards-grid { grid-template-columns: minmax(0, 1fr); }
+      .cards-grid { grid-template-columns: minmax(0,1fr); }
       .section { padding-inline: 14px; }
     }
   </style>
@@ -559,8 +532,8 @@
   <!-- 顶部提示条 -->
   <div class="topbar">
     <div class="topbar-inner">
-      <div>欢迎访问北京筑邦官方网站，专注建筑装饰与工程应用整体解决方案。</div>
-      <div>工程合作热线：010-XXXX XXXX</div>
+      <div>欢迎访问北京祝邦新技术研究所官方网站，祝邦品牌胶粘剂 · 清洗剂 · 专用化工建材。</div>
+      <div>服务热线：13801024443</div>
     </div>
   </div>
 
@@ -568,10 +541,10 @@
   <header class="nav">
     <div class="nav-inner">
       <div class="nav-brand">
-        <div class="nav-logo">筑</div>
+        <div class="nav-logo">祝</div>
         <div>
-          <div class="nav-text-cn">北京筑邦</div>
-          <div class="nav-text-en">ZHUBANG ARCHITECTURAL SYSTEM</div>
+          <div class="nav-text-cn">北京祝邦新技术研究所</div>
+          <div class="nav-text-en">ZHUBANG NEW TECHNOLOGY INSTITUTE</div>
         </div>
       </div>
       <nav class="nav-menu">
@@ -584,7 +557,7 @@
       </nav>
       <button class="nav-cta" onclick="scrollToSection('contact')">
         <span class="nav-cta-dot"></span>
-        立即联系工程顾问
+        立即联系祝邦技术顾问
       </button>
     </div>
   </header>
@@ -595,56 +568,58 @@
       <div>
         <div class="hero-pill">
           <span class="hero-pill-dot"></span>
-          幕墙系统 · 金属板材 · 工程应用一体化服务
+          胶粘剂 · 清洗剂 · 化工建材 · 行业标准参与单位
         </div>
-        <h1 class="hero-title-cn">让每一座建筑，都有属于它的表情</h1>
+        <h1 class="hero-title-cn">专注胶粘与清洗技术三十余年</h1>
         <div class="hero-title-en">
-          FACADE SYSTEM · METAL PANEL · ENGINEERING APPLICATION
+          PROFESSIONAL ADHESIVES & CLEANING SOLUTIONS SINCE 1991
         </div>
         <p class="hero-text">
-          北京筑邦专注建筑外立面与室内装饰系统，多年来服务于公共建筑、商业综合体、
-          办公园区与高端住宅项目。我们从材料选型、系统设计、加工制造到现场安装，提供
-          一站式解决方案，让建筑在满足功能的同时更具识别度和持久价值。
+          北京祝邦新技术研究所由国家有突出贡献专家、北京市劳动模范、
+          市科技先进工作者、高级工程师刘俊邦所长牵头，于1991年创立，
+          以高新技术研究为主攻方向，研制、生产、销售“祝邦”品牌胶粘剂、
+          清洗剂等化工建材产品。依靠诚信经营、开拓创新、锐意进取、
+          勤勉努力与热诚服务，赢得了广大用户的赞许和信任。
         </p>
         <div class="hero-tags">
-          <span class="hero-tag">铝单板系统</span>
-          <span class="hero-tag">蜂窝板 / 复合板</span>
-          <span class="hero-tag">造型吊顶与墙面</span>
-          <span class="hero-tag">工程配套与深化设计</span>
+          <span class="hero-tag">石材胶 / 干挂胶 / 背覆胶</span>
+          <span class="hero-tag">建筑结构胶 / 锚固胶 / 化学锚栓</span>
+          <span class="hero-tag">建筑防水胶 / 瓷砖胶</span>
+          <span class="hero-tag">清洗剂 / 防护剂 / 除垢剂</span>
         </div>
         <div class="hero-actions">
           <button class="btn-primary" onclick="scrollToSection('products')">
-            浏览企业产品
+            查看祝邦企业产品
             <span>↓</span>
           </button>
           <button class="btn-ghost" onclick="scrollToSection('applications')">
-            查看工程应用案例
+            浏览工程应用案例
           </button>
         </div>
       </div>
 
       <aside class="hero-card" aria-hidden="true">
         <div class="hero-card-header">
-          <span>系统化解决方案 · INTEGRATED SOLUTION</span>
-          <span>品质 · 安全 · 交付</span>
+          <span>祝邦胶粘剂 · 工程实践验证</span>
+          <span>天安门广场 · 清华大学 · 金融街等重点工程应用</span>
         </div>
         <div class="hero-card-main">
           <div class="hero-grid">
             <div>
-              <div class="hero-grid-title">FACADE / CEILING</div>
-              <p>从建筑外立面到室内公共空间，提供全系列金属板材系统，
-                兼顾结构安全、耐候性能与视觉表达。</p>
+              <div class="hero-grid-title">BRAND</div>
+              <p>祝邦品牌胶粘剂、清洗剂等化工建材，服务于建筑、机械等多个行业，
+                产品线覆盖石材安装、防水粘结、结构加固与精细清洗。</p>
             </div>
             <div>
-              <div class="hero-grid-title">PROJECT FLOW</div>
-              <p>方案配合 → 图纸深化 → 工厂生产 → 现场安装 →
-                交付维护，全流程专业团队跟进。</p>
+              <div class="hero-grid-title">STANDARD</div>
+              <p>参与 JC 887-2001、JC/T973-2005、JC/T989-2006 等
+                建材行业标准起草工作，为行业提供系统技术支撑。</p>
             </div>
           </div>
         </div>
         <div class="hero-card-footer">
-          <span>适用于：机场、地铁站、写字楼、购物中心、学校医院等多类型项目</span>
-          <span>支持定制颜色、尺寸及造型</span>
+          <span>地址：北京市西城区府右街太仆寺街23号</span>
+          <span>官方网站：www.bjzhubang.com.cn</span>
         </div>
       </aside>
     </div>
@@ -658,58 +633,58 @@
         <div class="section-title-en">PRODUCT PORTFOLIO</div>
       </div>
       <p class="section-desc">
-        以下为示例分类，你可以根据原有“产品简介”等页面，把真实产品型号、
-        规格、适用场景填入对应卡片或增减卡片数量。
+        祝邦产品涵盖石材安装、建筑结构加固、防水粘结及清洗防护等多个系列，
+        适用于新建工程与既有建筑维修保养。
       </p>
     </div>
 
     <div class="cards-grid">
       <article class="card">
-        <div class="card-tag">外墙系统 · FACADE</div>
-        <h3 class="card-title">金属幕墙铝单板系统</h3>
+        <div class="card-tag">石材系统 · STONE</div>
+        <h3 class="card-title">石材胶与干挂胶系列</h3>
         <p>
-          适用于大面积外立面与门头造型，可实现平面、折线、弧形等多种形式。
-          表面可根据需求选择氟碳喷涂、粉末喷涂或木纹转印等工艺，兼顾耐候性与美观度。
+          强力石材胶、快干石材胶、快固环氧干挂胶、石材背覆胶、玻化砖胶、
+          玻化砖背覆胶、游泳池专用胶等，适用于干挂石材、直粘石材及特殊环境铺贴。
         </p>
       </article>
       <article class="card">
-        <div class="card-tag">吊顶系统 · CEILING</div>
-        <h3 class="card-title">格栅吊顶 / 条形板吊顶</h3>
+        <div class="card-tag">结构锚固 · STRUCTURE</div>
+        <h3 class="card-title">锚固胶与化学锚栓系列</h3>
         <p>
-          多种模数与开孔形式，适用于大型中庭、交通枢纽、走道空间，便于检修与灯光布置，
-          营造轻盈通透的视觉效果。
+          锚固胶、化学锚栓、建筑结构胶等产品用于栽筋、补强和结构连接，
+          满足建筑结构加固及幕墙锚固等工程需求。
         </p>
       </article>
       <article class="card">
-        <div class="card-tag">室内墙面 · WALL PANEL</div>
-        <h3 class="card-title">吸音墙板与装饰墙板</h3>
+        <div class="card-tag">建筑防水 · WATERPROOF</div>
+        <h3 class="card-title">建筑胶与防水胶系列</h3>
         <p>
-          结合穿孔、吸音材料与背衬结构，提升空间声学表现；多种表面纹理与颜色选择，
-          适用于报告厅、会议室、教育及医疗空间。
+          建筑胶（ZB104）、瓷砖胶（ZB101）、建筑防水胶（ZB501A）、柔性防水胶（ZB501B）等，
+          广泛应用于墙地面瓷砖粘贴、蓄水池和楼体防水处理。
         </p>
       </article>
       <article class="card">
-        <div class="card-tag">特殊定制 · CUSTOM</div>
-        <h3 class="card-title">异形造型 / 艺术装置</h3>
+        <div class="card-tag">表面防护 · PROTECTION</div>
+        <h3 class="card-title">防护剂与修补胶系列</h3>
         <p>
-          配合建筑与室内设计需求，提供三维异形铝板、雕花板及艺术装置加工服务，
-          支持小批量定制与样板打样。
+          石材防护剂、金属填补胶、石材背覆胶等产品，提升石材及金属构件的耐久性，
+          有效降低渗色、污染和损伤风险。
         </p>
       </article>
       <article class="card">
-        <div class="card-tag">系统配套 · ACCESSORIES</div>
-        <h3 class="card-title">龙骨系统与连接件</h3>
+        <div class="card-tag">清洗维护 · CLEANING</div>
+        <h3 class="card-title">清洗剂与除垢剂系列</h3>
         <p>
-          为不同板型匹配对应龙骨、挂件与连接系统，确保结构稳定性与安装效率，
-          便于后期维护与局部更换。
+          水泥残渣清剂、化锈防锈液、重油污清洗剂、石材清洗剂、新型安全除垢剂、
+          汽车水箱清洗剂等，适用于建筑与设备的专业清洗与维护。
         </p>
       </article>
       <article class="card">
-        <div class="card-tag">方案服务 · SERVICE</div>
-        <h3 class="card-title">深化设计与技术支持</h3>
+        <div class="card-tag">过滤吸声 · SPECIAL</div>
+        <h3 class="card-title">微孔过滤与吸声元件</h3>
         <p>
-          提供节点深化、算量配套、安装指导等技术服务，帮助设计与施工单位在
-          早期阶段就规避潜在风险，提升整体实施效率。
+          塑珠微孔过滤、吸声、防尘元件以及粉末冶金精整液相关配套产品，
+          为过滤、防尘与噪声控制提供定制化解决方案。
         </p>
       </article>
     </div>
@@ -723,32 +698,35 @@
         <div class="section-title-en">PRODUCT OVERVIEW</div>
       </div>
       <p class="section-desc">
-        可以参考原“产品简介”页面的文字，将产品优势、性能指标等内容放入这里，
-        方便客户快速理解整体产品线特点。
+        源于科研所的技术积累，祝邦产品以稳定可靠著称，在多项国家重点工程中得到应用和验证。
       </p>
     </div>
 
     <div class="two-col">
       <div class="text-body">
         <p>
-          北京筑邦金属板材系统以安全、耐久与美学为核心设计原则，在板材厚度、
-          表面处理、结构连接及防腐蚀等方面严格把控。产品通过多项性能测试，
-          在抗风压、耐候性、防火等级等方面均能满足建筑规范要求。
+          北京祝邦新技术研究所以高新技术研究为主攻方向，长期专注于胶粘剂、
+          清洗剂等化工建材的研发与应用。祝邦品牌产品种类丰富，覆盖石材安装、
+          建筑结构加固、防水粘结、表面防护以及工业清洗等多个领域。
         </p>
         <p>
-          在外观呈现上，我们提供多种标准色系与特制定制色，可实现金属质感、
-          石纹、木纹等不同效果，匹配不同类型建筑的定位。通过模块化设计，
-          系统可灵活适配不同龙骨结构与安装条件，兼顾新建项目与改造项目的需求。
+          本所以科研经验丰富的专家和技术团队为基础，在配方设计、性能测试、
+          工程应用等环节持续优化。通过不断实践与改进，产品在施工便捷性、
+          粘结强度、耐久性以及安全性方面形成明显优势，赢得了工程用户的普遍认可。
         </p>
       </div>
       <aside class="panel">
-        <div class="panel-title">核心优势一览 · KEY FEATURES</div>
+        <div class="panel-title">主要产品一览 · KEY PRODUCTS</div>
         <ul class="bullet-list">
-          <li><span class="bullet-dot"></span>多种板型与模数组合，适配外墙、吊顶与室内墙面</li>
-          <li><span class="bullet-dot"></span>成熟的龙骨与连接系统设计，缩短安装周期</li>
-          <li><span class="bullet-dot"></span>多工艺表面处理，满足耐候性和视觉效果双重要求</li>
-          <li><span class="bullet-dot"></span>支持BIM / CAD 图纸配合与节点深化</li>
-          <li><span class="bullet-dot"></span>厂家直供模式，有利于控制成本与交期</li>
+          <li><span class="bullet-dot"></span>强力石材胶 · 快干石材胶 · 快固环氧干挂胶</li>
+          <li><span class="bullet-dot"></span>锚固胶 · 化学锚栓 · 建筑结构胶</li>
+          <li><span class="bullet-dot"></span>建筑胶 ZB104 · 瓷砖胶 ZB101</li>
+          <li><span class="bullet-dot"></span>建筑防水胶 ZB501A · 柔性防水胶 ZB501B</li>
+          <li><span class="bullet-dot"></span>石材背覆胶 · 金属填补胶 · 石材防护剂</li>
+          <li><span class="bullet-dot"></span>水泥残渣清剂 · 化锈防锈液 · 石材清洗剂</li>
+          <li><span class="bullet-dot"></span>重油污清洗剂 · 新型安全除垢剂 · 汽车水箱清洗剂</li>
+          <li><span class="bullet-dot"></span>玻化砖胶 · 玻化砖背覆胶 · 游泳池专用胶</li>
+          <li><span class="bullet-dot"></span>塑珠微孔过滤 / 吸声 / 防尘元件 · 粉末冶金精整液</li>
         </ul>
       </aside>
     </div>
@@ -762,32 +740,68 @@
         <div class="section-title-en">ENGINEERING APPLICATIONS</div>
       </div>
       <p class="section-desc">
-        该板块可替代原“工程应用”页面，将代表性项目按类型分组展示，
-        也可以后续链接到更多案例详情页。
+        祝邦产品广泛应用于国家重点工程和高校建筑，在干挂石材、直粘石材、
+        瓷砖粘贴、防水与防护等环节发挥重要作用。
       </p>
     </div>
 
-    <div class="two-col">
-      <div class="panel">
-        <div class="panel-title">典型应用场景 · APPLICATION SCENES</div>
-        <ul class="bullet-list">
-          <li><span class="bullet-dot"></span>城市综合体外立面与商业街区立面改造</li>
-          <li><span class="bullet-dot"></span>机场、高铁站、地铁站等交通枢纽公共空间吊顶</li>
-          <li><span class="bullet-dot"></span>政企办公楼、园区大堂及走廊墙面装饰</li>
-          <li><span class="bullet-dot"></span>学校、医院等公共建筑内外墙金属装饰系统</li>
-          <li><span class="bullet-dot"></span>旧楼改造与城市更新项目的外立面重塑</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <div class="panel-title">项目实施流程 · PROJECT FLOW</div>
-        <ul class="bullet-list">
-          <li><span class="bullet-dot"></span>前期沟通：了解项目需求、预算及进度计划</li>
-          <li><span class="bullet-dot"></span>方案阶段：配合建筑与室内设计方案，提供节点建议</li>
-          <li><span class="bullet-dot"></span>深化设计：完成施工图深化、材料清单及系统设计</li>
-          <li><span class="bullet-dot"></span>生产与供货：按计划安排工厂生产与现场排产</li>
-          <li><span class="bullet-dot"></span>安装与验收：配合施工单位安装指导，完成联合验收</li>
-        </ul>
-      </div>
+    <div class="cards-grid">
+      <article class="card">
+        <div class="card-tag">国家地标 · LANDMARK</div>
+        <h3 class="card-title">天安门广场 · 中国革命历史博物馆</h3>
+        <p>
+          干挂石材采用祝邦石材胶，实现大面积立面石材的安全可靠安装，
+          经长期使用验证粘结性能稳定。
+        </p>
+      </article>
+      <article class="card">
+        <div class="card-tag">部委工程</div>
+        <h3 class="card-title">外交部新办公楼前厅 · 邮电部大门楼</h3>
+        <p>
+          《华夏文明》汉白玉浮雕及高 9.8 米、直径 3 米石柱浮雕等部位
+          均采用祝邦石材胶粘贴，满足复杂构件与高标准展示空间需求。
+        </p>
+      </article>
+      <article class="card">
+        <div class="card-tag">文化建筑</div>
+        <h3 class="card-title">中华世纪坛 · 北京大学百年讲堂</h3>
+        <p>
+          内外墙石材采用祝邦石材胶直接粘贴或干挂，兼顾美观与耐久，
+          为重要文化设施提供可靠的装饰系统支持。
+        </p>
+      </article>
+      <article class="card">
+        <div class="card-tag">城市综合体</div>
+        <h3 class="card-title">北京长安街东方广场 · 国家电力调度中心</h3>
+        <p>
+          采用祝邦石材胶干挂石材，配合锚固胶进行栽筋，
+          应用于大型城市综合体及专业办公建筑外立面工程。
+        </p>
+      </article>
+      <article class="card">
+        <div class="card-tag">高校建筑</div>
+        <h3 class="card-title">清华大学主楼与体育馆</h3>
+        <p>
+          主楼外墙及体育馆外墙使用祝邦石材胶干挂石材，
+          体育馆内墙采用 ZB104 建筑胶粘贴瓷砖，体现校园建筑的整体品质。
+        </p>
+      </article>
+      <article class="card">
+        <div class="card-tag">金融街项目</div>
+        <h3 class="card-title">中国移动电信指挥中心 · 富凯大厦</h3>
+        <p>
+          采用祝邦石材胶直接粘贴石材，ZB104 建筑胶在 GRC 板上粘贴瓷砖，
+          ZB501 建筑防水胶用于蓄水池及楼体防水，石材防护剂用于石材防护，
+          服务于超五星级写字楼等高端项目。
+        </p>
+      </article>
+      <article class="card">
+        <div class="card-tag">商业办公</div>
+        <h3 class="card-title">北京中关村数码大厦</h3>
+        <p>
+          内墙采用祝邦石材胶直接粘贴石材，在科技商务空间中兼顾施工效率与装饰效果。
+        </p>
+      </article>
     </div>
   </section>
 
@@ -796,31 +810,38 @@
     <div class="section-heading">
       <div>
         <div class="section-title-cn">技术资料</div>
-        <div class="section-title-en">TECHNICAL DOCUMENTS</div>
+        <div class="section-title-en">TECHNICAL INFORMATION</div>
       </div>
       <p class="section-desc">
-        可在此放置产品样本下载链接、性能检测报告、安装说明书等，
-        方便设计师和工程单位获取技术数据。
+        祝邦不仅提供产品本身，更通过标准制定与技术咨询为行业输出系统化技术能力。
       </p>
     </div>
 
-    <div class="cards-grid">
-      <article class="card">
-        <div class="card-tag">CATALOG</div>
-        <h3 class="card-title">产品彩页 / 样本册</h3>
-        <p>包含常规板型、颜色、表面处理示意图等内容，可用于项目方案阶段沟通。</p>
-        <p style="font-size:12px;color:var(--muted);margin-top:6px;">（可链接到 PDF 下载：例如 /download/catalog.pdf）</p>
-      </article>
-      <article class="card">
-        <div class="card-tag">SPECIFICATION</div>
-        <h3 class="card-title">技术参数与选型手册</h3>
-        <p>详细列出板材厚度、允许跨度、安装节点示意等，为结构与施工设计提供依据。</p>
-      </article>
-      <article class="card">
-        <div class="card-tag">INSTALLATION</div>
-        <h3 class="card-title">安装与维护说明</h3>
-        <p>针对现场施工步骤、注意事项及后期清洁维护建议进行说明，确保系统长期稳定使用。</p>
-      </article>
+    <div class="two-col">
+      <div class="panel">
+        <div class="panel-title">参与行业标准 · STANDARD DRAFTING</div>
+        <ul class="bullet-list">
+          <li><span class="bullet-dot"></span>JC 887-2001《干挂石材幕墙用环氧胶》参编单位</li>
+          <li><span class="bullet-dot"></span>JC/T 973-2005《建筑装饰用天然石材防护剂》参编单位</li>
+          <li><span class="bullet-dot"></span>JC/T 989-2006《非结构承载用石材胶粘剂》参编单位</li>
+        </ul>
+        <p style="margin-top:10px;">
+          通过参与相关标准的起草工作，祝邦在产品性能指标、试验方法和工程应用方面
+          积累了系统经验，为用户选择和使用产品提供更可靠的技术依据。
+        </p>
+      </div>
+      <div class="panel">
+        <div class="panel-title">技术咨询与服务 · TECHNICAL SERVICE</div>
+        <ul class="bullet-list">
+          <li><span class="bullet-dot"></span>建筑、机械等行业粘接、过滤、清洗等技术疑难的咨询与方案设计</li>
+          <li><span class="bullet-dot"></span>针对特殊工况提供配方调整与工艺优化建议</li>
+          <li><span class="bullet-dot"></span>工程现场应用指导与技术培训</li>
+          <li><span class="bullet-dot"></span>协助用户进行试样、试验与效果评估</li>
+        </ul>
+        <p style="margin-top:10px;">
+          如需获取详细产品样本、检测报告或技术资料，请通过联系方式与我们联络。
+        </p>
+      </div>
     </div>
   </section>
 
@@ -832,50 +853,39 @@
         <div class="section-title-en">CONTACT</div>
       </div>
       <p class="section-desc">
-        以下为示例信息，你可以替换为 http://www.bjzhubang.com.cn 上实际的地址、电话、邮箱等。
+        以下信息来自祝邦官方资料，可直接用于客户联系和工程合作沟通。
       </p>
     </div>
 
     <div class="contact-grid">
       <div class="panel">
-        <h3 class="panel-title">公司联系信息 · COMPANY INFO</h3>
+        <h3 class="panel-title">北京祝邦新技术研究所</h3>
         <ul class="contact-list">
           <li class="contact-item">
-            <div class="contact-label">公司名称</div>
-            <div class="contact-value">北京筑邦建筑装饰工程有限公司（示例）</div>
-          </li>
-          <li class="contact-item">
             <div class="contact-label">地址</div>
-            <div class="contact-value">北京市 ×× 区 ×× 路 ×× 号（请替换为实际地址）</div>
+            <div class="contact-value">北京市西城区府右街太仆寺街23号</div>
           </li>
           <li class="contact-item">
             <div class="contact-label">电话</div>
-            <div class="contact-value">010-XXXX XXXX</div>
-          </li>
-          <li class="contact-item">
-            <div class="contact-label">传真</div>
-            <div class="contact-value">010-XXXX XXXX</div>
-          </li>
-          <li class="contact-item">
-            <div class="contact-label">邮箱</div>
-            <div class="contact-value">info@bjzhubang.com.cn</div>
+            <div class="contact-value">13801024443</div>
           </li>
           <li class="contact-item">
             <div class="contact-label">网址</div>
-            <div class="contact-value">www.bjzhubang.com.cn</div>
+            <div class="contact-value"><a href="http://www.bjzhubang.com.cn" target="_blank">http://www.bjzhubang.com.cn</a></div>
+          </li>
+          <li class="contact-item">
+            <div class="contact-label">说明</div>
+            <div class="contact-value">欢迎就工程应用、产品选型和技术问题与我们联系。</div>
           </li>
         </ul>
-        <p style="font-size:12px;color:var(--muted);margin-top:10px;">
-          如需项目投标文件、资质证书或工程案例 PPT，请通过电话或邮件与我们联系，我们将安排专人提供资料。
-        </p>
       </div>
 
       <div class="panel" id="message">
         <h3 class="panel-title">客户留言 · ONLINE MESSAGE</h3>
         <p style="font-size:12px;color:var(--muted);margin-bottom:10px;">
-          以下为示例表单样式，可接入公司邮箱或 CRM 系统。当前点击“提交留言”仅作演示提示。
+          以下为示例表单样式，可在正式部署时对接邮箱或后台系统。当前点击“提交留言”仅作演示提示。
         </p>
-        <form onsubmit="event.preventDefault(); alert('感谢您的留言！在正式网站中，这里可以对接后台或发送到指定邮箱。');">
+        <form onsubmit="event.preventDefault(); alert('感谢您的留言！在正式网站中，这里可以连接到祝邦指定邮箱或后台系统。');">
           <div class="form-row">
             <div class="form-field">
               <label for="name">您的姓名</label>
@@ -883,7 +893,7 @@
             </div>
             <div class="form-field">
               <label for="phone">联系电话</label>
-              <input id="phone" type="text" placeholder="手机号或座机" />
+              <input id="phone" type="text" placeholder="手机或固定电话" />
             </div>
           </div>
           <div class="form-row">
@@ -893,12 +903,12 @@
             </div>
             <div class="form-field">
               <label for="email">电子邮箱</label>
-              <input id="email" type="email" placeholder="选填，便于发送资料" />
+              <input id="email" type="email" placeholder="用于接收技术资料（选填）" />
             </div>
           </div>
           <div class="form-field" style="margin-bottom:10px;">
-            <label for="msg">项目需求或留言</label>
-            <textarea id="msg" placeholder="请简要说明项目类型、面积、地点及期望工期等信息"></textarea>
+            <label for="msg">项目需求或技术问题</label>
+            <textarea id="msg" placeholder="请简要说明项目名称、地点、应用部位及期望解决的问题"></textarea>
           </div>
           <button class="btn-primary" type="submit" style="font-size:12px;padding-inline:18px;">
             提交留言
@@ -912,16 +922,16 @@
   <div class="footer-cta">
     <div class="footer-cta-inner">
       <div>
-        <div class="footer-cta-title">订阅最新产品与工程资讯</div>
+        <div class="footer-cta-title">获取祝邦最新产品与工程案例</div>
         <div class="footer-cta-text">
-          留下您的邮箱，我们会不定期发送产品更新、工程案例与技术资料。
-          您也可以随时点击邮件中的退订链接。
+          留下您的邮箱，可以接收祝邦产品更新、工程应用案例及技术资料推送。
+          也欢迎直接拨打 13801024443 与我们联系。
         </div>
       </div>
       <div class="email-row">
         <input class="email-input" type="email" placeholder="请输入您的邮箱地址" />
-        <button class="btn-outline" onclick="alert('示例：这里可以提交到订阅系统。');">
-          订阅邮件
+        <button class="btn-outline" onclick="alert('示例：这里可以连接到邮件订阅系统。');">
+          提交邮箱
         </button>
         <button class="btn-outline" onclick="scrollToSection('top')">
           返回首页
@@ -933,13 +943,12 @@
   <!-- 页脚 -->
   <footer class="footer">
     <div class="footer-inner">
-      <div>© 北京筑邦建筑装饰工程有限公司（示例） 保留所有权利</div>
-      <div>ICP备案号 / 备案信息可根据实际情况补充</div>
+      <div>© 北京祝邦新技术研究所 保留所有权利</div>
+      <div>京ICP备09075916号-2</div>
     </div>
   </footer>
 
   <script>
-    // 点击导航平滑跳转
     function scrollToSection(id) {
       const el = document.getElementById(id);
       if (!el) return;
@@ -947,7 +956,6 @@
       window.scrollTo({ top, behavior: "smooth" });
     }
 
-    // 导航高亮当前模块（简单版）
     const navLinks = document.querySelectorAll(".nav-link");
     navLinks.forEach(link => {
       link.addEventListener("click", () => {
@@ -957,16 +965,14 @@
     });
 
     window.addEventListener("scroll", () => {
-      const sections = ["products", "intro", "applications", "tech", "contact", "message"];
+      const sections = ["products","intro","applications","tech","contact","message"];
       let current = null;
       const offset = 120;
       sections.forEach(id => {
         const el = document.getElementById(id);
         if (!el) return;
         const rect = el.getBoundingClientRect();
-        if (rect.top <= offset && rect.bottom > offset) {
-          current = id;
-        }
+        if (rect.top <= offset && rect.bottom > offset) current = id;
       });
       navLinks.forEach(link => {
         link.classList.toggle("active", link.getAttribute("data-target") === current);
