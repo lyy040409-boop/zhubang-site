@@ -9,7 +9,7 @@
 <body>
 <header class="site-header">
   <div class="header-inner">
-    <div class="brand">
+    <div style="display:flex;align-items:center;">
       <div class="logo-circle">ZB</div>
       <div>
         <div class="brand-text-main">北京祝邦新技术研究所</div>
@@ -27,141 +27,136 @@
 </header>
 
 <main class="page-shell">
-  <section class="hero">
-    <div>
-      <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
-        专注石材胶粘 · 自1991年
+
+  <!-- 顶部大封面：品牌 + 快速卖点 -->
+  <section style="margin-bottom:60px;display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;">
+    <div style="flex:1 1 320px;min-width:280px;">
+      <div style="display:inline-block;padding:6px 14px;border-radius:999px;background:#fff7ed;border:1px solid #fed7aa;font-size:12px;color:#c2410c;margin-bottom:14px;">
+        自 1991 年 · 专注石材胶粘剂与建筑防水系统
       </div>
-      <h1 class="hero-title">让每一块石材，都牢靠而优雅地存在</h1>
-      <p class="hero-subtitle">
-        祝邦由国家有突出贡献专家刘俊邦所长领衔，三十余年专注石材胶粘、防水、防护与清洗技术，
-        参与多项国家建材行业标准制定，为天安门广场、长安街地标、清华北大等重大项目提供系统解决方案。
+      <h1 class="page-title">让每一块石材，都牢靠而优雅地存在</h1>
+      <p class="page-subtitle">
+        祝邦由国家有突出贡献专家、北京市劳动模范刘俊邦所长领衔，
+        三十余年专注石材胶、建筑胶、防水、防护与清洗技术，
+        产品广泛服务于天安门广场、长安街、清华大学、北京大学、金融街等地标工程。
       </p>
-      <div class="hero-meta">
-        <span><span class="hero-meta-label">成立时间</span> 1991 年</span>
-        <span><span class="hero-meta-label">核心产品</span> 石材胶 · 建筑胶 · 防水胶 · 防护剂 · 清洗剂</span>
-        <span><span class="hero-meta-label">典型项目</span> 天安门广场 · 长安街 · 清华大学 · 北京大学</span>
+      <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:#6b7280;">
+        <span><strong>核心产品：</strong>石材胶 · 建筑胶 · 防水胶 · 防护剂 · 清洗剂</span>
+        <span><strong>适用场景：</strong>幕墙干挂 · 内外墙饰面 · 地面铺贴 · 游泳池 · 蓄水池</span>
+      </div>
+      <div style="margin-top:26px;display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="products.html" class="btn-primary" style="text-decoration:none;">查看全系列产品</a>
+        <a href="applications.html" class="nav-link" style="padding-left:0;">查看真实工程案例 →</a>
       </div>
     </div>
 
-    <aside class="hero-card">
-      <div class="hero-card-tag">ZHUBANG · PROJECTS</div>
-      <h2 class="hero-card-title">从天安门广场，到金融街高端写字楼</h2>
-      <p class="hero-card-text">
-        祝邦石材胶、建筑胶、防水体系广泛服务于公共建筑、地标广场、高端住宅与游泳池等复杂场景，
-        在结构安全、美观耐久与施工效率之间取得平衡。
-      </p>
-      <div class="hero-pill">
-        <span>✔ 参与 JC 887 / JC / T 973 / JC / T 989 等行业标准起草</span>
+    <div style="flex:1 1 280px;min-width:260px;">
+      <div class="card" style="height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <div style="font-size:13px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:10px;">
+            WHY ZHUBANG
+          </div>
+          <h2 style="font-size:18px;margin:0 0 10px;">工程单位信赖的胶粘与防水合作伙伴</h2>
+          <p class="card-text">
+            祝邦参与多项国家建材行业标准起草，长期承担建筑、机械等行业粘接、
+            过滤和清洗疑难问题的技术咨询与服务，为设计院、总包单位和石材加工企业
+            提供一站式解决方案。
+          </p>
+        </div>
+        <ul style="margin:16px 0 0;padding-left:18px;font-size:13px;color:#4b5563;line-height:1.8;">
+          <li>参与 JC 887-2001 / JC / T 973-2005 / JC / T 989-2006 等标准起草</li>
+          <li>从配方到应用工艺，全流程技术支持</li>
+          <li>多项国家级、市级科技先进集体荣誉</li>
+        </ul>
       </div>
-    </aside>
+    </div>
   </section>
 
+  <!-- 产品概览 -->
   <section class="section-block">
-    <div class="section-headline">
-      <h2 class="section-title">企业与产品概览</h2>
-      <span class="section-kicker">COMPANY &amp; PRODUCTS</span>
-    </div>
-    <p class="section-intro">
-      北京祝邦新技术研究所以高新技术研究为主攻方向，集研发、生产与销售于一体，
-      专注“祝邦”品牌石材胶粘剂、清洗剂及相关化工建材。产品覆盖石材干挂、建筑结构加固、
-      防水防护、瓷砖铺贴及专业清洗等多个环节。
+    <h2 class="section-title">祝邦核心产品线</h2>
+    <p class="section-desc">
+      围绕“牢固、安全、耐久、易施工”，祝邦形成以石材胶为核心，
+      覆盖结构锚固、防水防护、瓷砖铺贴与专业清洗的完整产品矩阵。
     </p>
     <div class="card-grid">
-      <article class="card">
-        <div class="card-tag">企业实力</div>
-        <h3 class="card-title">标准起草单位 · 科技先进集体</h3>
-        <p class="card-body">
-          祝邦科研经验丰富，参与 JC 887-2001《干挂石材幕墙用环氧胶》、
-          JC / T 973-2005《建筑装饰用天然石材防护剂》、
-          JC / T 989-2006《非结构承载用石材胶粘剂》等标准起草，
-          承担建筑、机械等行业粘接、过滤与清洗疑难问题的技术咨询与服务。
+      <div class="card">
+        <div class="card-title">石材胶 &amp; 干挂系统</div>
+        <p class="card-text">
+          强力石材胶、快干石材胶、快固环氧干挂胶等，满足幕墙干挂、
+          大板石材、立柱浮雕等高安全等级场景，广泛应用于天安门广场、
+          中华世纪坛、长安街沿线地标。
         </p>
-      </article>
-
-      <article class="card">
-        <div class="card-tag">主打产品</div>
-        <h3 class="card-title">“祝邦”全系石材 & 建筑胶</h3>
-        <p class="card-body">
-          强力石材胶、快干石材胶、快固环氧干挂胶、锚固胶、化学锚栓、建筑结构胶、
-          建筑胶（ZB104）、瓷砖胶（ZB101）、建筑防水胶（ZB501A/B）、石材背覆胶、
-          金属填补胶、石材防护剂等，可组合成系统解决方案。
+      </div>
+      <div class="card">
+        <div class="card-title">结构胶与锚固胶</div>
+        <p class="card-text">
+          锚固胶、化学锚栓、建筑结构胶等，用于挂件栽筋、后锚固连接与局部加固，
+          与石材胶形成安全可靠的支撑体系。
         </p>
-      </article>
-
-      <article class="card">
-        <div class="card-tag">工程应用</div>
-        <h3 class="card-title">从广场地标到高校建筑</h3>
-        <p class="card-body">
-          产品广泛应用于天安门广场及中国国家博物馆、外交部新办公楼、
-          中华世纪坛、长安街东方广场与国家电网调度中心、
-          清华大学、北京大学百年讲堂、中关村数码大厦及金融街高端写字楼等工程。
+      </div>
+      <div class="card">
+        <div class="card-title">建筑胶 &amp; 瓷砖胶 &amp; 防水胶</div>
+        <p class="card-text">
+          ZB104 建筑胶、ZB101 瓷砖胶、ZB501A/B 建筑防水胶，
+          适用于内外墙、GRC 板、蓄水池和屋面等部位的铺贴与防水。
         </p>
-      </article>
-
-      <article class="card">
-        <div class="card-tag">服务理念</div>
-        <h3 class="card-title">诚信经营 · 开拓创新</h3>
-        <p class="card-body">
-          自 1991 年成立以来，祝邦始终坚持诚信经营、锐意进取、勤勉努力、热诚服务，
-          以稳定可靠的产品质量、细致的技术指导与售后支持，
-          赢得广大用户的赞许与信任。
+      </div>
+      <div class="card">
+        <div class="card-title">石材防护与清洗体系</div>
+        <p class="card-text">
+          石材防护剂、水泥残渣清洗剂、石材清洗剂、新型安全除垢剂、
+          化锈防锈液、重油污清洗剂等，覆盖施工期与运维期的清洗与养护需求。
         </p>
-      </article>
+      </div>
     </div>
   </section>
 
+  <!-- 快速导航 -->
   <section class="section-block">
-    <div class="section-headline">
-      <h2 class="section-title">快速导航</h2>
-      <span class="section-kicker">QUICK LINKS</span>
-    </div>
+    <h2 class="section-title">快速进入您关心的内容</h2>
+    <p class="section-desc">
+      无论您是设计院、施工单位、石材加工厂，还是业主代表，
+      都可以从以下版块快速找到所需信息。
+    </p>
     <div class="card-grid">
-      <a class="card" href="products.html" style="text-decoration:none;">
-        <div class="card-tag">PRODUCTS</div>
-        <h3 class="card-title">企业与产品</h3>
-        <p class="card-body">
-          查看祝邦石材胶、建筑胶、防水胶、防护剂、清洗剂等完整产品谱系，
-          按应用场景快速锁定匹配方案。
+      <a href="products.html" class="card" style="text-decoration:none;color:inherit;">
+        <div class="card-title">企业与产品</div>
+        <p class="card-text">
+          了解祝邦的发展历程、技术优势以及石材胶、建筑胶、防水、防护、
+          清洗剂等完整产品谱系。
         </p>
       </a>
-
-      <a class="card" href="applications.html" style="text-decoration:none;">
-        <div class="card-tag">PROJECTS</div>
-        <h3 class="card-title">工程应用案例</h3>
-        <p class="card-body">
-          浏览典型工程项目：天安门广场、长安街东方广场、清华大学、北京大学百年讲堂等真实案例。
+      <a href="applications.html" class="card" style="text-decoration:none;color:inherit;">
+        <div class="card-title">工程应用案例</div>
+        <p class="card-text">
+          浏览天安门广场、外交部新办公楼、清华大学、北京大学百年讲堂、
+          金融街高端写字楼等典型案例。
         </p>
       </a>
-
-      <a class="card" href="tech.html" style="text-decoration:none;">
-        <div class="card-tag">TECH</div>
-        <h3 class="card-title">技术资料中心</h3>
-        <p class="card-body">
-          下载产品说明书、施工工艺要点、配套系统建议，了解标准条文及祝邦技术支持能力。
+      <a href="tech.html" class="card" style="text-decoration:none;color:inherit;">
+        <div class="card-title">技术资料中心</div>
+        <p class="card-text">
+          查看产品适用范围、施工要点、系统搭配建议及相关标准条文提示，
+          为方案设计与招投标提供依据。
         </p>
       </a>
-
-      <a class="card" href="contact.html" style="text-decoration:none;">
-        <div class="card-tag">CONTACT</div>
-        <h3 class="card-title">联系我们 & 客户留言</h3>
-        <p class="card-body">
-          获取联系方式、地址与在线留言入口，工程技术问题可直接提交，由技术人员一对一回复。
+      <a href="contact.html" class="card" style="text-decoration:none;color:inherit;">
+        <div class="card-title">联系我们 &amp; 客户留言</div>
+        <p class="card-text">
+          获取电话、地址与在线留言入口，将项目名称、使用部位与面积告诉我们，
+          技术人员会一对一提供建议。
         </p>
       </a>
     </div>
   </section>
+
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-row">
-      <span class="footer-strong">京ICP备09075916号-2</span>
-      <span>地址：北京市西城区府右街太仆寺街23号</span>
-      <span>电话：13801024443</span>
-      <span>网址：<a href="http://www.bjzhubang.com.cn" target="_blank" style="color:#e5e7eb;text-decoration:none;">www.bjzhubang.com.cn</a></span>
-    </div>
+    <div>京ICP备09075916号-2</div>
+    <div>地址：北京市西城区府右街太仆寺街23号　电话：13801024443　网址：<a href="http://www.bjzhubang.com.cn" target="_blank">www.bjzhubang.com.cn</a></div>
     <div>© 北京祝邦新技术研究所 Beijing Zhubang New Technology Institute</div>
   </div>
 </footer>
